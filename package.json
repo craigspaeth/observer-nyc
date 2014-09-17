@@ -1,15 +1,18 @@
 {
-  "name": "artsy-2014",
+  "name": "observer-nyc",
   "version": "0.0.1",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "start": "make s"
+  },
   "dependencies": {
     "express": "*",
-    "jade": "*"
+    "jade": "*",
+    "coffee-script": "*",
+    "node-env-file": "*"
   },
   "devDependencies": {
     "stylus": "*",
-    "coffee-script": "*",
     "nib": "*",
     "browserify": "*",
     "browserify-dev-middleware": "*",
