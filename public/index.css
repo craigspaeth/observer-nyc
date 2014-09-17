@@ -114,4 +114,6 @@ a img {
 }
 body {
   font-family: BentonSans, sans-serif;
+  background: #000;
+  color: #fff;
 }
