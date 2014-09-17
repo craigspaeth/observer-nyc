@@ -1,8 +1,6 @@
 express = require 'express'
 env = require 'node-env-file'
 path = require 'path'
-_ = require 'underscore'
-_s = require 'underscore.string'
 
 # setup
 env __dirname + '/.env'
