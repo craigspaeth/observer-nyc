@@ -13,4 +13,4 @@ commit:
 	git push git@github.com:craigspaeth/observer-nyc.git master
 
 deploy: assets commit
-	git push git@heroku.com:observer-nyc.git
+	git push git@heroku.com:observer-nyc.git master
