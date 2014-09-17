@@ -7,3 +7,70 @@ body
   font-family BentonSans, sans-serif
   background black
   color white
+  font-smoothing antialiased
+  
+*
+  box-sizing border-box
+  line-height 1.4em
+  font-size 15px
+
+a
+  color white
+  text-decoration none
+
+.slide
+  position relative
+  margin-bottom 300px
+
+.long-body
+  font-family Cardo
+  font-size 28px
+
+.width1
+  width 900px
+  margin auto
+
+.benton-black-h
+  text-transform uppercase
+  font-weight bold
+  font-size 110px
+  line-height 100px
+  font-weight 900
+
+#header-nav
+  padding 20px 0
+  text-align center
+  position fixed
+  top 0
+  width 100%
+  background linear-gradient(top, black, transparent)
+  z-index -1
+  opacity 0
+  transition opacity 0.3s
+  &.is-active
+    opacity 1
+    z-index 2
+  a
+    padding 20px
+    text-transform uppercase
+    letter-spacing 1px
+    color #aaa
+    transition color 0.3s ease-out
+    &:hover
+      color white
+
+#slide1 img
+  position absolute
+  width 400px
+  top 50%
+  margin-top -30px
+  left 50%
+  margin-left -(@width / 2)
+
+#slide2 h1
+  font-family Cardo
+  text-align center
+  text-transform uppercase
+  font-size 34px
+  letter-spacing 2px
+  line-height 1.3em

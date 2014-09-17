@@ -16,6 +16,8 @@
     "nib": "*",
     "browserify": "*",
     "browserify-dev-middleware": "*",
-    "caching-coffeeify": "*"
+    "caching-coffeeify": "*",
+    "jquery-waypoints": "git://github.com/imakewebthings/jquery-waypoints.git",
+    "underscore": "*"
   }
 }

@@ -8,6 +8,11 @@
   src: url("fonts/benton-bold.woff");
 }
 @font-face {
+  font-family: BentonSans;
+  font-weight: 900;
+  src: url("fonts/benton-black.woff");
+}
+@font-face {
   font-family: Cardo;
   src: url("fonts/cardo-regular.woff");
 }
@@ -116,4 +121,92 @@ body {
   font-family: BentonSans, sans-serif;
   background: #000;
   color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 1.4em;
+  font-size: 15px;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.slide {
+  position: relative;
+  margin-bottom: 300px;
+}
+.long-body {
+  font-family: Cardo;
+  font-size: 28px;
+}
+.width1 {
+  width: 900px;
+  margin: auto;
+}
+.benton-black-h {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 110px;
+  line-height: 100px;
+  font-weight: 900;
+}
+#header-nav {
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: -webkit-linear-gradient(top, #000, transparent);
+  background: -moz-linear-gradient(top, #000, transparent);
+  background: -o-linear-gradient(top, #000, transparent);
+  background: -ms-linear-gradient(top, #000, transparent);
+  background: linear-gradient(to bottom, #000, transparent);
+  z-index: -1;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+#header-nav.is-active {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  z-index: 2;
+}
+#header-nav a {
+  padding: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  -ms-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+}
+#header-nav a:hover {
+  color: #fff;
+}
+#slide1 img {
+  position: absolute;
+  width: 400px;
+  top: 50%;
+  margin-top: -30px;
+  left: 50%;
+  margin-left: -200px;
+}
+#slide2 h1 {
+  font-family: Cardo;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 34px;
+  letter-spacing: 2px;
+  line-height: 1.3em;
 }

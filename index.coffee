@@ -1,6 +1,8 @@
 express = require 'express'
 env = require 'node-env-file'
 path = require 'path'
+_ = require 'underscore'
+_s = require 'underscore.string'
 
 # setup
 env __dirname + '/.env'
@@ -12,7 +14,7 @@ if 'development' is process.env.NODE_ENV
     src: __dirname + '/stylesheets'
     dest: __dirname + '/public'
   app.use require('browserify-dev-middleware')
-    src: __dirname
+    src: __dirname + '/client'
     transforms: [require('caching-coffeeify')]
 app.use express.static __dirname + '/public'
 
