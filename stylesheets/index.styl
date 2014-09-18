@@ -1,14 +1,16 @@
 @import '../node_modules/nib'
 @import 'fonts'
 
+main-margin = 80px
+
 global-reset()
 
 body
   font-family BentonSans, sans-serif
-  background black
+  background-color rgb(0,0,0)
   color white
   font-smoothing antialiased
-  
+
 *
   box-sizing border-box
   line-height 1.4em
@@ -20,15 +22,37 @@ a
 
 .slide
   position relative
-  margin-bottom 300px
+  padding 200px 0
 
-.long-body
+.long-body, .long-body-large
   font-family Cardo
   font-size 28px
+
+.long-body-large
+  font-size 42px
+  line-height 1.2em
 
 .width1
   width 900px
   margin auto
+
+.fill-width
+  max-width 100%
+  max-height 100%
+  display block
+  margin auto
+  padding 0 main-margin
+
+.img-spacer
+  margin-top main-margin
+
+.caption
+  color #aaa
+  font-size 12px
+  text-align right
+  margin-top (main-margin / 2)
+  padding 0 main-margin
+  display block
 
 .benton-black-h
   text-transform uppercase
@@ -43,7 +67,7 @@ a
   position fixed
   top 0
   width 100%
-  background linear-gradient(top, black, transparent)
+  background black
   z-index -1
   opacity 0
   transition opacity 0.3s
@@ -56,7 +80,7 @@ a
     letter-spacing 1px
     color #aaa
     transition color 0.3s ease-out
-    &:hover
+    &:hover, &.is-active
       color white
 
 #slide1 img
@@ -74,3 +98,35 @@ a
   font-size 34px
   letter-spacing 2px
   line-height 1.3em
+
+#slide15
+  padding-top 100px
+  position relative
+  h1
+    font-family Cardo
+    text-transform none
+    line-height 10px
+    font-weight normal
+  em
+    font-style italic
+  img
+    position absolute
+    bottom 100px
+    right 0
+    height 40px
+
+.boxes-container
+  display inline-block
+  vertical-align top
+  width 33% 
+  margin-bottom 20px
+  &:nth-child(2n)
+    text-align center
+  &:nth-child(3n)
+    text-align right
+  &:nth-child(4n)
+    text-align left
+  &:nth-child(5n)
+    text-align center
+  &:nth-child(6n)
+    text-align right

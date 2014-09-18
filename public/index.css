@@ -24,7 +24,7 @@
 @font-face {
   font-family: Cardo;
   font-style: italic;
-  src: url("fonts/cardo-regular.woff");
+  src: url("fonts/cardo-italic.woff");
 }
 html,
 body,
@@ -119,7 +119,7 @@ a img {
 }
 body {
   font-family: BentonSans, sans-serif;
-  background: #000;
+  background-color: #000;
   color: #fff;
   -webkit-font-smoothing: antialiased;
 }
@@ -136,15 +136,38 @@ a {
 }
 .slide {
   position: relative;
-  margin-bottom: 300px;
+  padding: 200px 0;
 }
-.long-body {
+.long-body,
+.long-body-large {
   font-family: Cardo;
   font-size: 28px;
+}
+.long-body-large {
+  font-size: 42px;
+  line-height: 1.2em;
 }
 .width1 {
   width: 900px;
   margin: auto;
+}
+.fill-width {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+  padding: 0 80px;
+}
+.img-spacer {
+  margin-top: 80px;
+}
+.caption {
+  color: #aaa;
+  font-size: 12px;
+  text-align: right;
+  margin-top: 40px;
+  padding: 0 80px;
+  display: block;
 }
 .benton-black-h {
   text-transform: uppercase;
@@ -159,11 +182,7 @@ a {
   position: fixed;
   top: 0;
   width: 100%;
-  background: -webkit-linear-gradient(top, #000, transparent);
-  background: -moz-linear-gradient(top, #000, transparent);
-  background: -o-linear-gradient(top, #000, transparent);
-  background: -ms-linear-gradient(top, #000, transparent);
-  background: linear-gradient(to bottom, #000, transparent);
+  background: #000;
   z-index: -1;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -191,7 +210,8 @@ a {
   -ms-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
-#header-nav a:hover {
+#header-nav a:hover,
+#header-nav a.is-active {
   color: #fff;
 }
 #slide1 img {
@@ -209,4 +229,44 @@ a {
   font-size: 34px;
   letter-spacing: 2px;
   line-height: 1.3em;
+}
+#slide15 {
+  padding-top: 100px;
+  position: relative;
+}
+#slide15 h1 {
+  font-family: Cardo;
+  text-transform: none;
+  line-height: 10px;
+  font-weight: normal;
+}
+#slide15 em {
+  font-style: italic;
+}
+#slide15 img {
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  height: 40px;
+}
+.boxes-container {
+  display: inline-block;
+  vertical-align: top;
+  width: 33%;
+  margin-bottom: 20px;
+}
+.boxes-container:nth-child(2n) {
+  text-align: center;
+}
+.boxes-container:nth-child(3n) {
+  text-align: right;
+}
+.boxes-container:nth-child(4n) {
+  text-align: left;
+}
+.boxes-container:nth-child(5n) {
+  text-align: center;
+}
+.boxes-container:nth-child(6n) {
+  text-align: right;
 }
