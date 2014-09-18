@@ -1,26 +1,84 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var setSlideHeight, setupWaypoints, _;
+var setSlideHeight, setupClickHeaderNav, setupWaypoints, transitionBGEnd, transitionBGStart, _;
 
 require('jquery-waypoints/waypoints.js');
 
 _ = require('underscore');
 
+setupClickHeaderNav = function() {
+  return $('#header-nav a').click(function() {
+    $('body, html').animate({
+      scrollTop: $("#" + ($(this).attr('href'))).offset().top + 50
+    });
+    return false;
+  });
+};
+
 setSlideHeight = function() {
-  return $('.slide').height($(window).height());
+  return $('.slide').css({
+    'min-height': $(window).height()
+  });
 };
 
 setupWaypoints = function() {
-  return $('#slide3').waypoint(function(dir) {
+  var i, _i, _results;
+  $('#slide3').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $('#header-nav')[fn]('is-active');
+  });
+  $('#slide10 + .slide').waypoint(function(dir) {
+    var fn;
+    fn = (dir === 'down' ? 'remove' : 'add') + 'Class';
+    return $('#header-nav')[fn]('is-active');
+  });
+  _results = [];
+  for (i = _i = 4; _i <= 9; i = ++_i) {
+    _results.push($('#slide' + i).waypoint(function() {
+      $("#header-nav a").removeClass('is-active');
+      return $("#header-nav [href='" + ($(this).attr('id')) + "']").addClass('is-active');
+    }));
+  }
+  return _results;
+};
+
+transitionBGStart = function() {
+  var end, perc, start, val;
+  if ($(window).scrollTop() > $('#slide9').offset().top) {
+    return;
+  }
+  start = $('#slide3 h1').offset().top - 200;
+  end = $('#slide4').offset().top - $(window).height();
+  perc = (end - $(window).scrollTop()) / (end - start);
+  val = Math.round(perc * 255);
+  return $('body').css({
+    background: "rgb(" + (255 - val) + "," + (255 - val) + "," + (255 - val) + ")",
+    color: "rgb(" + val + "," + val + "," + val + ")"
+  });
+};
+
+transitionBGEnd = function() {
+  var end, perc, start, val;
+  if ($(window).scrollTop() < $('#slide9').offset().top) {
+    return;
+  }
+  start = $('#slide10').offset().top + $('#slide10').height() + 300;
+  end = $('#slide11').offset().top - ($(window).height() / 2) + 300;
+  perc = (end - $(window).scrollTop()) / (end - start);
+  val = Math.round(perc * 255);
+  return $('body').css({
+    color: "rgb(" + (255 - val) + "," + (255 - val) + "," + (255 - val) + ")",
+    background: "rgb(" + val + "," + val + "," + val + ")"
   });
 };
 
 $(function() {
   $(window).on('resize', setSlideHeight);
+  $(window).on('scroll', transitionBGStart);
+  $(window).on('scroll', transitionBGEnd);
   setSlideHeight();
-  return setupWaypoints();
+  setupWaypoints();
+  return setupClickHeaderNav();
 });
 
 
