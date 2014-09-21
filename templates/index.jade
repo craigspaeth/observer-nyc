@@ -5,84 +5,108 @@ html( lang="en" )
     link( type='text/css' rel='stylesheet' href='index.css' )
   body
     nav#header-nav
-      for label, i in ['Traditional Luxury Sites', 'New Mass Media', 'Observer.com', 'Built For Luxury', 'The 20%', 'The Grid']
-        a( href='slide' + (i + 4) )= label
-    
-    section#slide1.slide
-      img( src='images/logotype.svg' )
-    
-    section#slide2.slide.width1
-      h1 93% of the wealth in America is held by 20% of the population.
-    
-    section#slide3.slide.width1
-      h1.benton-black-h Are you reaching that 20%?
-    
-    .slide( style='margin-bottom: -500px' )
-
-    section#slide4.slide
-      p.width1.long-body In today's digital age, the traditional print vehicles for luxury advertising have been left behind, never transitioning organically online. Having retained their “print first” editorial and design ethos, their online presences still feel like afterthoughts to their glossy counterparts, failing to attract a large portion of the 20%.
-      .img-spacer
-      img.fill-width( src='/images/slide4-content.jpg' )
-      small.caption Sources: Quantcast, June 2014 - Observer, GQ, Esquire, Vanity Fair; Comscore, June 2014 - Vogue (Vogue is not tracked by Quantcast)
-    
-    section#slide5.slide
-      p.long-body.width1 The digital innovators have ignored the luxury space. On the hunt for more pageviews and more visitors, digital native publishers have sacrificed quality and taste to reach massive audiences, relying on empty calories like: cat videos, political Twitter scandals, and click-bait celebrity headlines.
-      .img-spacer
-      img.fill-width( src='/images/slide5-content.jpg' )
-
-    section#slide6.slide.width1
-      h1.benton-black-h Enter Observer.com
-      br
-      p.long-body-large The speed, focus & innovation of a native digital media company with the taste & audience quality of a traditional luxury publisher
-    
-    section#slide7.slide
-      p.long-body.width1 Built to reach the 20% on the topics they are passionate about, Observer.com features the latest in national news, fine arts, fashion, politics & high value real estate.
-      .img-spacer
-      img.fill-width( src='/images/slide7-content.jpg' )
-
-    section#slide8.slide.width1
-      p.long-body This September, Gallerist — the leading news site for the global art world — will roll into Observer.com, affording it nationally recognized coverage of art news, trends and criticism. Joining the Observer's audience of luxury readers, Gallerist delivers the elite world of collectors, gallery owners and art world influencers.
-    
-    section#slide9.slide
-      p.long-body.width1 Studies show that the top earners in the United States are becoming increasingly wealthy, concentrating the vast majority of wealth in the hands of a few. Most popular internet sites target the majority of the country and neglect the nation’s most affluent individuals—Observer.com reaches them.
-      .img-spacer
-      img.fill-width( src='/images/slide8-content.jpg' )
-      small.caption Source: www2.ucsc.edu/whorulesamerica/power/wealth.html
+      #header-nav-inner
+        a( href='slide4' ) Traditional<br> Luxury Sites
+        a( href='slide5' ) New Mass<br> Media 
+        a( href='slide7' ) Observer.com 
+        a( href='slide8' ) The 20% 
+        a( href='slide9' ) The Grid
+           
+    #main
+      section#slide1.slide
+        img( src='images/logotype.svg' )
+        #slide1-down-arrow
       
-    section#slide10.slide
-      p.long-body.width1 With more expendable income on average than any competitive site, Observer.com’s audience nets $223 trillion in combined annual income.
-      .img-spacer
-      img.fill-width( src='/images/slide10-content.jpg' )
-      small.caption Source: Quantcast, June 2014; Comscore, April & June 2014
+      section#slide2.slide
+        h1 93% of the wealth in America is held by<br> 20% of the population.
+        .reveal-screen
 
-    .slide( style='margin-bottom: -200px' )
+      section#slide3.slide
+        h1.benton-black-h Are you reaching<br> that 20%?
+      
+      .slide( style='margin-bottom: -600px' )
 
-    section#slide11.slide.width1
-      h1.benton-black-h We<br> Tell<br> Stories
-    
-    section#slide12.slide
-      p.long-body.width1 Recognized for outstanding editorial programs and original branded content, the Observer’s digital, print, and social media platforms captivate audiences through dynamic stories told by strong voices.
-      .img-spacer
-      .boxes.width1
-        for n, i in new Array(6)
-          .boxes-container
-            img( src='/images/box' + (i + 1) + '.png' )
-    
-    section#slide13.slide.width1
-      h1.benton-black-h We<br> Create<br> Stories
-    
-    section#slide14.slide
-      p.long-body.width1 The Observer brings together business, culture, and media leaders for premier experiences and intimate, unforgettable performances. With partners like Universal Music and talent like Carla Bruni, John Legend, and other world renowned artists, the Observer creates stories. With a cast of elite characters, in extraordinary settings, brands can expect a fairytale ending.
-      .img-spacer
-      .boxes.width1
-        for n, i in new Array(6)
-          .boxes-container
-            img( src='/images/box2-' + (i + 1) + '.jpg' )
-    
-    section#slide15.slide.width1
-      h1.benton-black-h Let us tell <br><em>your</em> story.
-      img( src='images/logotype.svg' )
+      section#slide4.slide
+        p.long-body In today's digital age, the traditional print vehicles for luxury advertising have been left behind, never transitioning organically online. Having retained their “print first” editorial and design ethos, their online presences still feel like afterthoughts to their glossy counterparts, failing to attract a large portion of the 20%.
+        .img-spacer
+        #luxury-graph-container
+          img( src='/images/slide4-content.jpg' )
+          include ../public/images/luxury-graph.svg
+        small.caption Sources: Quantcast, June 2014 - Observer, GQ, Esquire, Vanity Fair; Comscore, June 2014 - Vogue (Vogue is not tracked by Quantcast)
+      
+      section#slide5.slide
+        p.long-body The digital innovators have ignored the luxury space. On the hunt for more pageviews and more visitors, digital native publishers have sacrificed quality and taste to reach massive audiences, relying on empty calories like: cat videos, political Twitter scandals, and click-bait celebrity headlines.
+        .img-spacer
+        .ipads
+          p Shock Stories
+          p Funny Pets
+          p Celebrities
+          .ipads-imgs
+            img( src='/images/slide5-content-cover.jpg' )
+            img( src='/images/slide5-content.jpg' )
+
+      section#slide6.slide
+        h1.benton-black-h Enter Observer.com
+        br
+        #slide6-sub-copy
+          p.long-body-large The speed, focus & innovation of a native digital media company with the taste & audience quality of a traditional luxury publisher
+          .reveal-screen
+      
+      section#slide7.slide
+        p.long-body Built to reach the 20% on the topics they are passionate about, Observer.com features the latest in national news, fine arts, fashion, politics & high value real estate.
+        .img-spacer
+        .ipads
+          p Style
+          p Art & Culture
+          p Politics
+          .ipads-imgs
+            img( src='/images/slide7-content-cover.jpg' )
+            img( src='/images/slide7-content.jpg' )
+      
+      section#slide8.slide
+        p.long-body Studies show that the top earners in the United States are becoming increasingly wealthy, concentrating the vast majority of wealth in the hands of a few. Most popular internet sites target the majority of the country and neglect the nation’s most affluent individuals—Observer.com reaches them.
+        .img-spacer
+        img( src='/images/slide8-content.jpg' )
+        small.caption Source: www2.ucsc.edu/whorulesamerica/power/wealth.html
+        
+      section#slide9.slide
+        p.long-body With more expendable income on average than any competitive site, Observer.com’s audience nets $223 trillion in combined annual income.
+        .img-spacer
+        #grid-container
+          include ../public/images/grid.svg
+          #grid-stands-alone Observer.com<br> stands alone
+            #grid-stands-alone-cover
+        small.caption Source: Quantcast, June 2014; Comscore, April & June 2014
+
+      .slide( style='margin-bottom: -600px' )
+
+      section#slide11.slide
+        h1.benton-black-h We<br> Tell<br> Stories
+      
+      section#slide12.slide
+        p.long-body Recognized for outstanding editorial programs and original branded content, the Observer’s digital, print, and social media platforms captivate audiences through dynamic stories told by strong voices.
+        .img-spacer
+        .boxes
+          for n, i in new Array(6)
+            .boxes-container
+              img( src='/images/box' + (i + 1) + '.png' )
+      
+      section#slide13.slide
+        h1.benton-black-h We<br> Create<br> Stories
+      
+      section#slide14.slide
+        p.long-body The Observer brings together business, culture, and media leaders for premier experiences and intimate, unforgettable performances. With partners like Universal Music and talent like Carla Bruni, John Legend, and other world renowned artists, the Observer creates stories. With a cast of elite characters, in extraordinary settings, brands can expect a fairytale ending.
+        .img-spacer
+        .boxes
+          for n, i in new Array(6)
+            .boxes-container
+              img( src='/images/box2-' + (i + 1) + '.jpg' )
+      
+      section#slide15.slide
+        h1.benton-black-h Let us tell <br><em>your</em> story.
+        img( src='images/logotype.svg' )
     
     #scripts
       script( src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" )
+      script( src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js" )
       script( src='/index.js' )

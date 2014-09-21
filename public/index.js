@@ -27,7 +27,7 @@ setupWaypoints = function() {
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $('#header-nav')[fn]('is-active');
   });
-  $('#slide10 + .slide').waypoint(function(dir) {
+  $('#slide9 + .slide').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'remove' : 'add') + 'Class';
     return $('#header-nav')[fn]('is-active');
@@ -44,7 +44,7 @@ setupWaypoints = function() {
 
 transitionBGStart = function() {
   var end, perc, start, val;
-  if ($(window).scrollTop() > $('#slide9').offset().top) {
+  if ($(window).scrollTop() > $('#slide8').offset().top) {
     return;
   }
   start = $('#slide3 h1').offset().top - 200;
@@ -59,10 +59,10 @@ transitionBGStart = function() {
 
 transitionBGEnd = function() {
   var end, perc, start, val;
-  if ($(window).scrollTop() < $('#slide9').offset().top) {
+  if ($(window).scrollTop() < $('#slide8').offset().top) {
     return;
   }
-  start = $('#slide10').offset().top + $('#slide10').height() + 300;
+  start = $('#slide9').offset().top + $('#slide9').height() + 300;
   end = $('#slide11').offset().top - ($(window).height() / 2) + 300;
   perc = (end - $(window).scrollTop()) / (end - start);
   val = Math.round(perc * 255);
