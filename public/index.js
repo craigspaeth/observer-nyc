@@ -104,8 +104,8 @@ transitionBGStart = function() {
   if ($(window).scrollTop() > $('#slide8').offset().top) {
     return;
   }
-  start = $('#slide3 h1').offset().top - 200;
-  end = $('#slide4').offset().top - $(window).height();
+  start = $('#slide3 h1').offset().top + 100;
+  end = $('#slide4').offset().top - ($(window).height() / 2);
   perc = (end - $(window).scrollTop()) / (end - start);
   val = Math.max(Math.round(perc * 255), 0);
   return $('body').css({

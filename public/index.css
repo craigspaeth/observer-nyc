@@ -208,6 +208,9 @@ a {
   text-align: center;
   vertical-align: middle;
 }
+#header-nav a:last-child {
+  margin-right: 0;
+}
 #header-nav a:hover,
 #header-nav a.is-active {
   color: #fff;
