@@ -23,7 +23,7 @@ setupWaypoints = ->
   $('#slide3').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $('#header-nav')[fn] 'is-active'
-  , offset: -> -$(this).height()
+  , offset: -> -$(this).height() - 200
 
   # Grow graph
   $("#slide4 svg rect[idx]").each ->

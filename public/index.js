@@ -38,7 +38,7 @@ setupWaypoints = function() {
     return $('#header-nav')[fn]('is-active');
   }, {
     offset: function() {
-      return -$(this).height();
+      return -$(this).height() - 200;
     }
   });
   $("#slide4 svg rect[idx]").each(function() {
