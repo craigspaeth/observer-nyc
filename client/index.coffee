@@ -20,7 +20,7 @@ setupWaypoints = ->
   , offset: '30%'
 
   # Show nav
-  $('#slide3').waypoint (dir) ->
+  $('#slide4').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $('#header-nav')[fn] 'is-active'
 
@@ -105,7 +105,7 @@ highlightNav = ->
   for el, i in els = $('#header-nav a').toArray().reverse()
     return $(el).addClass('is-active') if i is els.length - 1
     id = $(els[i + 1]).attr 'href'
-    if $("##{id}").offset().top + ($("##{id}").height() / 2) < $(window).scrollTop()
+    if ($("##{id}").offset().top + $("##{id}").height()) + 100 < $(window).scrollTop()
       $(el).addClass 'is-active'
       break
 

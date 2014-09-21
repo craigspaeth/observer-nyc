@@ -32,7 +32,7 @@ setupWaypoints = function() {
   }, {
     offset: '30%'
   });
-  $('#slide3').waypoint(function(dir) {
+  $('#slide4').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $('#header-nav')[fn]('is-active');
@@ -152,7 +152,7 @@ highlightNav = function() {
       return $(el).addClass('is-active');
     }
     id = $(els[i + 1]).attr('href');
-    if ($("#" + id).offset().top + ($("#" + id).height() / 2) < $(window).scrollTop()) {
+    if (($("#" + id).offset().top + $("#" + id).height()) + 100 < $(window).scrollTop()) {
       $(el).addClass('is-active');
       break;
     }
