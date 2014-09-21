@@ -1,31 +1,82 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var setSlideHeight, setupClickHeaderNav, setupWaypoints, transitionBGEnd, transitionBGStart, _;
+var setSlideHeight, setupClickHeaderNav, setupSlide1Arrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
 
 require('jquery-waypoints/waypoints.js');
 
 _ = require('underscore');
 
 setupClickHeaderNav = function() {
-  return $('#header-nav a').click(function() {
-    $('body, html').animate({
-      scrollTop: $("#" + ($(this).attr('href'))).offset().top + 50
+  return $('#header-nav a').click(function(e) {
+    var top;
+    e.preventDefault();
+    top = $("#" + ($(this).attr('href'))).offset().top;
+    top += $(window).scrollTop() > top ? -50 : 50;
+    return $('body, html').animate({
+      scrollTop: top
     });
-    return false;
   });
 };
 
-setSlideHeight = function() {
-  return $('.slide').css({
-    'min-height': $(window).height()
+setupSlide1Arrow = function() {
+  return $('#slide1-down-arrow').click(function() {
+    return $('body, html').animate({
+      scrollTop: $(window).height()
+    }, 800);
   });
 };
 
 setupWaypoints = function() {
   var i, _i, _results;
+  $('#slide2').waypoint(function(dir) {
+    return $(this).addClass('is-active');
+  }, {
+    offset: '30%'
+  });
   $('#slide3').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $('#header-nav')[fn]('is-active');
+  });
+  $('#slide4').waypoint(function(dir) {
+    var fn, i, _i, _results;
+    _results = [];
+    for (i = _i = 0; _i <= 4; i = ++_i) {
+      fn = function($el) {
+        return function() {
+          return $el.animate({
+            height: $el.attr('height')
+          }, {
+            duration: 15000,
+            easing: 'easeOutQuad',
+            step: function(now) {
+              return $(this).attr('height', Math.max($(this).attr('height') - now, 0));
+            }
+          });
+        };
+      };
+      _results.push(setTimeout(fn($("#slide4 svg rect[idx=\"" + i + "\"]")), 80 * i));
+    }
+    return _results;
+  });
+  $('#slide5, #slide7').waypoint(function(dir) {
+    return $(this).find('.ipads').addClass('is-active');
+  }, {
+    offset: '10%'
+  });
+  $('#slide6').waypoint(function(dir) {
+    return $(this).addClass('is-active');
+  }, {
+    offset: '30%'
+  });
+  $('#slide9').waypoint(function(dir) {
+    return $(this).addClass('is-active');
+  }, {
+    offset: '-20%'
+  });
+  $('#slide15').waypoint(function() {
+    return $(this).addClass('is-active');
+  }, {
+    offset: '40%'
   });
   $('#slide9 + .slide').waypoint(function(dir) {
     var fn;
@@ -42,6 +93,12 @@ setupWaypoints = function() {
   return _results;
 };
 
+setSlideHeight = function() {
+  return $('.slide').css({
+    'min-height': $(window).height()
+  });
+};
+
 transitionBGStart = function() {
   var end, perc, start, val;
   if ($(window).scrollTop() > $('#slide8').offset().top) {
@@ -50,10 +107,10 @@ transitionBGStart = function() {
   start = $('#slide3 h1').offset().top - 200;
   end = $('#slide4').offset().top - $(window).height();
   perc = (end - $(window).scrollTop()) / (end - start);
-  val = Math.round(perc * 255);
+  val = Math.max(Math.round(perc * 255), 0);
   return $('body').css({
     background: "rgb(" + (255 - val) + "," + (255 - val) + "," + (255 - val) + ")",
-    color: "rgb(" + val + "," + val + "," + val + ")"
+    color: "rgb(" + (val + 40) + "," + (val + 40) + "," + (val + 40) + ")"
   });
 };
 
@@ -73,12 +130,17 @@ transitionBGEnd = function() {
 };
 
 $(function() {
-  $(window).on('resize', setSlideHeight);
+  $(window).on('resize', _.debounce(setSlideHeight, 100));
   $(window).on('scroll', transitionBGStart);
   $(window).on('scroll', transitionBGEnd);
   setSlideHeight();
   setupWaypoints();
-  return setupClickHeaderNav();
+  setupClickHeaderNav();
+  setupSlide1Arrow();
+  $('#slide1').addClass('is-active');
+  return setTimeout((function() {
+    return $('body, html').scrollTop(0);
+  }), 50);
 });
 
 
