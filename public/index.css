@@ -135,7 +135,7 @@ a {
 }
 .long-body,
 .long-body-large {
-  font-family: Playfair;
+  font-family: Georgia;
   font-size: 24px;
 }
 .long-body-large {
@@ -271,7 +271,7 @@ a {
   width: 0%;
 }
 #slide2 h1 {
-  font-family: Playfair;
+  font-family: Georgia;
   text-align: center;
   text-transform: uppercase;
   font-size: 34px;
@@ -333,7 +333,7 @@ a {
   position: relative;
 }
 #slide15 h1 {
-  font-family: Playfair;
+  font-family: Georgia;
   text-transform: none;
   line-height: 10px;
   font-weight: normal;

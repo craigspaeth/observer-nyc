@@ -32,10 +32,14 @@ setupWaypoints = function() {
   }, {
     offset: '30%'
   });
-  $('#slide4').waypoint(function(dir) {
+  $('#slide3').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $('#header-nav')[fn]('is-active');
+  }, {
+    offset: function() {
+      return -$(this).height();
+    }
   });
   $("#slide4 svg rect[idx]").each(function() {
     return $(this).data('originalHeight', $(this).attr('height'));
