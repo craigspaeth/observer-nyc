@@ -4,8 +4,7 @@ _ = require 'underscore'
 setupClickHeaderNav = ->
   $('#header-nav a').click (e) ->
     e.preventDefault()
-    top = $("##{$(this).attr('href')}").offset().top
-    top += if $(window).scrollTop() > top then -50 else 50
+    top = $("##{$(this).attr('href')}").offset().top - 120
     $('body, html').animate scrollTop: top
 
 setupSlide1Arrow = ->
@@ -16,7 +15,8 @@ setupWaypoints = ->
 
   # Slide reveal 93% of the wealth
   $('#slide2').waypoint (dir) ->
-    $(this).addClass 'is-active'
+    fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
+    $(this)[fn] 'is-active'
   , offset: '30%'
 
   # Show nav
@@ -25,50 +25,57 @@ setupWaypoints = ->
     $('#header-nav')[fn] 'is-active'
 
   # Grow graph
+  $("#slide4 svg rect[idx]").each ->
+    $(this).data 'originalHeight', $(this).attr 'height'
   $('#slide4').waypoint (dir) ->
     for i in [0..4]
       fn = ($el) -> ->
         $el.animate(
-          { height: $el.attr('height') }
+          { x: $el.data('originalHeight') }
           {
-            duration: 15000,
-            easing: 'easeOutQuad'
+            duration: 1000,
+            easing: 'easeOutCubic'
             step: (now) ->
-              $(this).attr 'height', Math.max ($(this).attr('height') - now), 0
+              if dir is 'down'
+                $(this).attr 'height', $(this).data('originalHeight') - now
+              else
+                $(this).attr 'height', now
           }
         )
-      setTimeout fn($("#slide4 svg rect[idx=\"#{i}\"]")), 80 * i
-  
+      if dir is 'down'
+        setTimeout fn($("#slide4 svg rect[idx=\"#{i}\"]")), 50 * i
+      else
+        setTimeout fn($("#slide4 svg rect[idx=\"#{4 - i}\"]")), 50 * i
+  , offset: -80 
+
   # Show ipads
   $('#slide5, #slide7').waypoint (dir) ->
-    $(this).find('.ipads').addClass 'is-active'
+    fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
+    $(this).find('.ipads')[fn] 'is-active'
   , offset: '10%'
 
   # Slide reveal Enter Observer.com of the wealth
   $('#slide6').waypoint (dir) ->
-    $(this).addClass 'is-active'
+    fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
+    $(this)[fn] 'is-active'
   , offset: '30%'
 
   # Animate grid
   $('#slide9').waypoint (dir) ->
-    $(this).addClass 'is-active'
+    fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
+    $(this)[fn] 'is-active'
   , offset: '-20%' 
 
   # Fade in last frame
-  $('#slide15').waypoint ->
-    $(this).addClass 'is-active'
+  $('#slide15').waypoint (dir) ->
+    fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
+    $(this)[fn] 'is-active'
   , offset: '40%'
 
   # Hide nav
   $('#slide9 + .slide').waypoint (dir) ->
     fn = (if dir is 'down' then 'remove' else 'add') + 'Class'
     $('#header-nav')[fn] 'is-active'
-
-  # Highlight nav
-  for i in [4..9]
-    $('#slide' + i).waypoint ->
-      $("#header-nav a").removeClass 'is-active'
-      $("#header-nav [href='#{$(this).attr 'id'}']").addClass 'is-active'
 
 setSlideHeight = ->
   $('.slide').css 'min-height': $(window).height()
@@ -85,21 +92,30 @@ transitionBGStart = ->
 
 transitionBGEnd = ->
   return if $(window).scrollTop() < $('#slide8').offset().top
-  start = $('#slide9').offset().top + $('#slide9').height() + 300
-  end = $('#slide11').offset().top - ($(window).height() / 2) + 300
+  start = $('#slide9').offset().top + ($(window).height() / 2)
+  end = ($('#slide11').offset().top - $(window).height()) + 200
   perc = (end - $(window).scrollTop()) / (end - start)
   val = Math.round perc * 255
   $('body').css
     color: "rgb(#{255 - val},#{255 - val},#{255 - val})"
     background: "rgb(#{val},#{val},#{val})"
 
+highlightNav = ->
+  $("#header-nav a").removeClass 'is-active'
+  for el, i in els = $('#header-nav a').toArray().reverse()
+    return $(el).addClass('is-active') if i is els.length - 1
+    id = $(els[i + 1]).attr 'href'
+    if $("##{id}").offset().top + ($("##{id}").height() / 2) < $(window).scrollTop()
+      $(el).addClass 'is-active'
+      break
+
 $ ->
   $(window).on 'resize', _.debounce setSlideHeight, 100
   $(window).on 'scroll', transitionBGStart
   $(window).on 'scroll', transitionBGEnd
+  $(window).on 'scroll', highlightNav
   setSlideHeight()
   setupWaypoints()
   setupClickHeaderNav()
   setupSlide1Arrow()
   $('#slide1').addClass 'is-active'
-  setTimeout (-> $('body, html').scrollTop 0), 50

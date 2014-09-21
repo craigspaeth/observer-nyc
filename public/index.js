@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var setSlideHeight, setupClickHeaderNav, setupSlide1Arrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
+var highlightNav, setSlideHeight, setupClickHeaderNav, setupSlide1Arrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
 
 require('jquery-waypoints/waypoints.js');
 
@@ -9,8 +9,7 @@ setupClickHeaderNav = function() {
   return $('#header-nav a').click(function(e) {
     var top;
     e.preventDefault();
-    top = $("#" + ($(this).attr('href'))).offset().top;
-    top += $(window).scrollTop() > top ? -50 : 50;
+    top = $("#" + ($(this).attr('href'))).offset().top - 120;
     return $('body, html').animate({
       scrollTop: top
     });
@@ -26,9 +25,10 @@ setupSlide1Arrow = function() {
 };
 
 setupWaypoints = function() {
-  var i, _i, _results;
   $('#slide2').waypoint(function(dir) {
-    return $(this).addClass('is-active');
+    var fn;
+    fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
+    return $(this)[fn]('is-active');
   }, {
     offset: '30%'
   });
@@ -37,6 +37,9 @@ setupWaypoints = function() {
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $('#header-nav')[fn]('is-active');
   });
+  $("#slide4 svg rect[idx]").each(function() {
+    return $(this).data('originalHeight', $(this).attr('height'));
+  });
   $('#slide4').waypoint(function(dir) {
     var fn, i, _i, _results;
     _results = [];
@@ -44,53 +47,63 @@ setupWaypoints = function() {
       fn = function($el) {
         return function() {
           return $el.animate({
-            height: $el.attr('height')
+            x: $el.data('originalHeight')
           }, {
-            duration: 15000,
-            easing: 'easeOutQuad',
+            duration: 1000,
+            easing: 'easeOutCubic',
             step: function(now) {
-              return $(this).attr('height', Math.max($(this).attr('height') - now, 0));
+              if (dir === 'down') {
+                return $(this).attr('height', $(this).data('originalHeight') - now);
+              } else {
+                return $(this).attr('height', now);
+              }
             }
           });
         };
       };
-      _results.push(setTimeout(fn($("#slide4 svg rect[idx=\"" + i + "\"]")), 80 * i));
+      if (dir === 'down') {
+        _results.push(setTimeout(fn($("#slide4 svg rect[idx=\"" + i + "\"]")), 50 * i));
+      } else {
+        _results.push(setTimeout(fn($("#slide4 svg rect[idx=\"" + (4 - i) + "\"]")), 50 * i));
+      }
     }
     return _results;
+  }, {
+    offset: -80
   });
   $('#slide5, #slide7').waypoint(function(dir) {
-    return $(this).find('.ipads').addClass('is-active');
+    var fn;
+    fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
+    return $(this).find('.ipads')[fn]('is-active');
   }, {
     offset: '10%'
   });
   $('#slide6').waypoint(function(dir) {
-    return $(this).addClass('is-active');
+    var fn;
+    fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
+    return $(this)[fn]('is-active');
   }, {
     offset: '30%'
   });
   $('#slide9').waypoint(function(dir) {
-    return $(this).addClass('is-active');
+    var fn;
+    fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
+    return $(this)[fn]('is-active');
   }, {
     offset: '-20%'
   });
-  $('#slide15').waypoint(function() {
-    return $(this).addClass('is-active');
+  $('#slide15').waypoint(function(dir) {
+    var fn;
+    fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
+    return $(this)[fn]('is-active');
   }, {
     offset: '40%'
   });
-  $('#slide9 + .slide').waypoint(function(dir) {
+  return $('#slide9 + .slide').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'remove' : 'add') + 'Class';
     return $('#header-nav')[fn]('is-active');
   });
-  _results = [];
-  for (i = _i = 4; _i <= 9; i = ++_i) {
-    _results.push($('#slide' + i).waypoint(function() {
-      $("#header-nav a").removeClass('is-active');
-      return $("#header-nav [href='" + ($(this).attr('id')) + "']").addClass('is-active');
-    }));
-  }
-  return _results;
 };
 
 setSlideHeight = function() {
@@ -119,8 +132,8 @@ transitionBGEnd = function() {
   if ($(window).scrollTop() < $('#slide8').offset().top) {
     return;
   }
-  start = $('#slide9').offset().top + $('#slide9').height() + 300;
-  end = $('#slide11').offset().top - ($(window).height() / 2) + 300;
+  start = $('#slide9').offset().top + ($(window).height() / 2);
+  end = ($('#slide11').offset().top - $(window).height()) + 200;
   perc = (end - $(window).scrollTop()) / (end - start);
   val = Math.round(perc * 255);
   return $('body').css({
@@ -129,18 +142,33 @@ transitionBGEnd = function() {
   });
 };
 
+highlightNav = function() {
+  var el, els, i, id, _i, _len, _ref;
+  $("#header-nav a").removeClass('is-active');
+  _ref = els = $('#header-nav a').toArray().reverse();
+  for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+    el = _ref[i];
+    if (i === els.length - 1) {
+      return $(el).addClass('is-active');
+    }
+    id = $(els[i + 1]).attr('href');
+    if ($("#" + id).offset().top + ($("#" + id).height() / 2) < $(window).scrollTop()) {
+      $(el).addClass('is-active');
+      break;
+    }
+  }
+};
+
 $(function() {
   $(window).on('resize', _.debounce(setSlideHeight, 100));
   $(window).on('scroll', transitionBGStart);
   $(window).on('scroll', transitionBGEnd);
+  $(window).on('scroll', highlightNav);
   setSlideHeight();
   setupWaypoints();
   setupClickHeaderNav();
   setupSlide1Arrow();
-  $('#slide1').addClass('is-active');
-  return setTimeout((function() {
-    return $('body, html').scrollTop(0);
-  }), 50);
+  return $('#slide1').addClass('is-active');
 });
 
 
