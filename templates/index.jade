@@ -1,8 +1,10 @@
 doctype html
-html( lang="en" )
+html( lang="en" data-user-agent=userAgent )
   head
     title Observer.nyc
     link( type='text/css' rel='stylesheet' href='index.css' )
+    meta( name="title" "Observer.nyc" )
+    meta( name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" )
   body
     nav#header-nav
       #header-nav-inner
@@ -15,7 +17,8 @@ html( lang="en" )
            
     #main
       section#slide1.slide
-        img( src='images/logotype.svg' )
+        a( href='http://observer.com' target='_blank' )
+          img( src='images/logotype.svg' alt='Observer.com' )
         #slide1-down-arrow
       section#slide2.slide
         h1 93% of the wealth in America is held by<br> 20% of the population.
@@ -24,14 +27,18 @@ html( lang="en" )
       section#slide3.slide
         h1.benton-black-h Are you reaching<br> that 20%?
       
-      .slide( style='margin-bottom: -600px' )
+      unless userAgent.match(/iPad|iPhone/)
+        .slide( style='margin-bottom: -600px' )
 
       section#slide4.slide
         p.long-body In today's digital age, the traditional print vehicles for luxury advertising have been left behind, never transitioning organically online. Having retained their “print first” editorial and design ethos, their online presences still feel like afterthoughts to their glossy counterparts, failing to attract a large portion of the 20%.
         .img-spacer
-        #luxury-graph-container
-          img( src='/images/slide4-content.jpg' )
-          include ../public/images/luxury-graph.svg
+        unless userAgent.match(/iPad|iPhone/)
+          #luxury-graph-container
+            img( src='/images/slide4-content.jpg' )
+            include ../public/images/luxury-graph.svg
+        else
+          img#luxury-graph-mobile( src='/images/graph-mobile.jpg' )
         small.caption Sources: Quantcast, June 2014 - Observer, GQ, Esquire, Vanity Fair; Comscore, June 2014 - Vogue (Vogue is not tracked by Quantcast)
       
       section#slide5.slide
@@ -62,7 +69,7 @@ html( lang="en" )
           .ipads-imgs
             img( src='/images/slide7-content-cover.jpg' )
             img( src='/images/slide7-content.jpg' )
-      
+
       section#slide8.slide
         p.long-body Studies show that the top earners in the United States are becoming increasingly wealthy, concentrating the vast majority of wealth in the hands of a few. Most popular internet sites target the majority of the country and neglect the nation’s most affluent individuals—Observer.com reaches them.
         .img-spacer
@@ -72,13 +79,17 @@ html( lang="en" )
       section#slide9.slide
         p.long-body With more expendable income on average than any competitive site, Observer.com’s audience nets $223 trillion in combined annual income.
         .img-spacer
-        #grid-container
-          include ../public/images/grid.svg
-          #grid-stands-alone Observer.com<br> stands alone
-            #grid-stands-alone-cover
+        unless userAgent.match(/iPad|iPhone/)
+          #grid-container
+            include ../public/images/grid.svg
+            #grid-stands-alone Observer.com<br> stands alone
+              #grid-stands-alone-cover
+        else
+          img#luxury-grid-mobile( src='/images/grid-mobile.png' )
         small.caption Source: Quantcast, June 2014; Comscore, April & June 2014
 
-      .slide( style='margin-bottom: -600px' )
+      unless userAgent.match(/iPad|iPhone/)
+        .slide( style='margin-bottom: -600px' )
 
       section#slide11.slide
         h1.benton-black-h We<br> Tell<br> Stories
@@ -104,7 +115,9 @@ html( lang="en" )
       
       section#slide15.slide
         h1.benton-black-h Let us tell <br><em>your</em> story.
-        img( src='images/logotype.svg' )
+        #backtotop
+        a( href='http://observer.com' target='_blank' )
+          img( src='images/logotype.svg' alt='Observer.com' )
     
     #scripts
       script( src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" )

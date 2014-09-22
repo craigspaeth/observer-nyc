@@ -13,13 +13,13 @@
   src: url("fonts/benton-black.woff");
 }
 @font-face {
-  font-family: Playfair;
-  src: url("fonts/playfair-regular.woff");
+  font-family: PTSerif;
+  src: url("fonts/ptserif-regular.woff");
 }
 @font-face {
-  font-family: Playfair;
+  font-family: PTSerif;
   font-style: italic;
-  src: url("fonts/playfair-italic.woff");
+  src: url("fonts/ptserif-italic.woff");
 }
 html,
 body,
@@ -131,15 +131,15 @@ a {
 }
 .slide {
   position: relative;
-  padding: 200px 0;
+  padding: 200px 60px;
 }
 .long-body,
 .long-body-large {
-  font-family: Georgia;
+  font-family: PTSerif;
   font-size: 24px;
 }
 .long-body-large {
-  font-size: 42px;
+  font-size: 38px;
   line-height: 1.2em;
 }
 .img-spacer {
@@ -163,7 +163,6 @@ a {
   width: 1024px;
   margin: auto;
   display: block;
-  padding: 0 60px;
 }
 #main img {
   max-width: 100%;
@@ -215,6 +214,9 @@ a {
 #header-nav a.is-active {
   color: #fff;
 }
+#header-nav-inner {
+  min-width: 855px;
+}
 #slide1.is-active img {
   opacity: 1;
   -ms-filter: none;
@@ -222,7 +224,6 @@ a {
 }
 #slide1.is-active #slide1-down-arrow {
   bottom: 80px;
-  left: 0;
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -231,7 +232,7 @@ a {
   position: absolute;
   width: 400px;
   top: 50%;
-  margin-top: -30px;
+  margin-top: -50px;
   left: 50%;
   margin-left: -200px;
   opacity: 0;
@@ -243,13 +244,16 @@ a {
   -ms-transition: opacity 1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition: opacity 1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-#slide1-down-arrow {
+#slide1-down-arrow,
+#backtotop {
   background: url("images/down-arrow.svg") no-repeat center center;
   -webkit-background-size: 30px;
   -moz-background-size: 30px;
   background-size: 30px;
   height: 30px;
-  width: 100%;
+  width: 100px;
+  left: 50%;
+  margin-left: -50px;
   position: absolute;
   bottom: -30px;
   opacity: 0;
@@ -263,14 +267,14 @@ a {
   cursor: pointer;
 }
 #slide2 {
-  margin-bottom: -210px;
+  margin-bottom: -180px;
   position: relative;
 }
 #slide2.is-active .reveal-screen {
   width: 0%;
 }
 #slide2 h1 {
-  font-family: Georgia;
+  font-family: PTSerif;
   text-align: center;
   text-transform: uppercase;
   font-size: 34px;
@@ -332,7 +336,7 @@ a {
   position: relative;
 }
 #slide15 h1 {
-  font-family: Georgia;
+  font-family: PTSerif;
   text-transform: none;
   line-height: 10px;
   font-weight: normal;
@@ -343,7 +347,7 @@ a {
 #slide15 img {
   position: absolute;
   bottom: 100px;
-  right: 0;
+  right: 60px;
   height: 40px;
 }
 .boxes-container {
@@ -505,11 +509,41 @@ a {
   -ms-transition: opacity 0.3s ease-in 1.3s;
   transition: opacity 0.3s ease-in 1.3s;
 }
+#slide15 #backtotop {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  bottom: 0;
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  transition-duration: 0s;
+  -webkit-transition: opacity 0.3s ease-in 2s;
+  -moz-transition: opacity 0.3s ease-in 2s;
+  -o-transition: opacity 0.3s ease-in 2s;
+  -ms-transition: opacity 0.3s ease-in 2s;
+  transition: opacity 0.3s ease-in 2s;
+  -webkit-transition: bottom 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 2s, opacity 0.3s ease-in 2s;
+  -moz-transition: bottom 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 2s, opacity 0.3s ease-in 2s;
+  -o-transition: bottom 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 2s, opacity 0.3s ease-in 2s;
+  -ms-transition: bottom 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 2s, opacity 0.3s ease-in 2s;
+  transition: bottom 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 2s, opacity 0.3s ease-in 2s;
+}
 #slide15.is-active .benton-black-h,
-#slide15.is-active img {
+#slide15.is-active img,
+#slide15.is-active #backtotop {
   opacity: 1;
   -ms-filter: none;
   filter: none;
+}
+#slide15.is-active #backtotop {
+  bottom: 100px;
 }
 #grid-container {
   position: relative;
@@ -538,4 +572,158 @@ a {
   -ms-transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
   transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
   width: 100%;
+}
+#grid-container svg {
+  position: relative;
+  left: -145px;
+}
+html[data-user-agent*=iPad] #main,
+html[data-user-agent*=iPhone] #main {
+  width: auto;
+}
+html[data-user-agent*=iPad] body,
+html[data-user-agent*=iPhone] body {
+  color: #282828;
+  background: #fff;
+}
+html[data-user-agent*=iPad] #slide2 h1,
+html[data-user-agent*=iPhone] #slide2 h1 {
+  font-size: 26px;
+}
+html[data-user-agent*=iPad] .benton-black-h,
+html[data-user-agent*=iPhone] .benton-black-h {
+  font-size: 76px !important;
+  line-height: 72px;
+}
+html[data-user-agent*=iPad] .ipads,
+html[data-user-agent*=iPhone] .ipads {
+  height: 290px;
+}
+html[data-user-agent*=iPad] .ipads > p,
+html[data-user-agent*=iPhone] .ipads > p {
+  width: 27.33%;
+  margin: 0 3%;
+}
+html[data-user-agent*=iPad] #grid-container,
+html[data-user-agent*=iPhone] #grid-container {
+  height: 430px;
+  position: relative;
+  left: -90px;
+}
+html[data-user-agent*=iPad] #grid-container #grid-stands-alone,
+html[data-user-agent*=iPhone] #grid-container #grid-stands-alone {
+  font-size: 14px;
+  top: 90px;
+  right: -100px;
+  padding: 20px 25px 16px 25px;
+}
+html[data-user-agent*=iPad] .slide,
+html[data-user-agent*=iPhone] .slide {
+  padding: 100px 60px;
+  border-top: 1px solid #ddd;
+}
+html[data-user-agent*=iPad] #slide1,
+html[data-user-agent*=iPhone] #slide1,
+html[data-user-agent*=iPad] #slide2,
+html[data-user-agent*=iPhone] #slide2,
+html[data-user-agent*=iPad] #slide3,
+html[data-user-agent*=iPhone] #slide3,
+html[data-user-agent*=iPad] #slide11,
+html[data-user-agent*=iPhone] #slide11,
+html[data-user-agent*=iPad] #slide12,
+html[data-user-agent*=iPhone] #slide12,
+html[data-user-agent*=iPad] #slide13,
+html[data-user-agent*=iPhone] #slide13,
+html[data-user-agent*=iPad] #slide14,
+html[data-user-agent*=iPhone] #slide14,
+html[data-user-agent*=iPad] #slide15,
+html[data-user-agent*=iPhone] #slide15 {
+  background: #000;
+  color: #fff;
+  border-top: 0;
+}
+html[data-user-agent*=iPad] #slide3,
+html[data-user-agent*=iPhone] #slide3 {
+  margin-bottom: -40px;
+}
+html[data-user-agent*=iPad] #slide4,
+html[data-user-agent*=iPhone] #slide4 {
+  border-top: 0;
+}
+html[data-user-agent*=iPad] #slide11,
+html[data-user-agent*=iPhone] #slide11 {
+  margin-top: 80px;
+}
+html[data-user-agent*=iPad] #slide2,
+html[data-user-agent*=iPhone] #slide2 {
+  position: relative;
+}
+html[data-user-agent*=iPad] #slide2 h1,
+html[data-user-agent*=iPhone] #slide2 h1 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 0;
+  margin-top: -50px;
+}
+html[data-user-agent*=iPad] #luxury-graph-mobile,
+html[data-user-agent*=iPhone] #luxury-graph-mobile {
+  border-bottom: 1px solid #ccc;
+}
+html[data-user-agent*=iPhone] .benton-black-h {
+  font-size: 35px !important;
+  line-height: 34px;
+}
+html[data-user-agent*=iPhone] .slide {
+  padding: 100px 20px;
+}
+html[data-user-agent*=iPhone] .caption {
+  font-size: 10px;
+}
+html[data-user-agent*=iPhone] .long-body {
+  font-size: 16px;
+}
+html[data-user-agent*=iPhone] .long-body-large {
+  font-size: 22px;
+}
+html[data-user-agent*=iPhone] #slide1 img {
+  width: 250px;
+  margin-left: -125px;
+}
+html[data-user-agent*=iPhone] #slide2 h1 {
+  font-size: 18px;
+}
+html[data-user-agent*=iPhone] #slide6 h1 {
+  font-size: 32px !important;
+}
+html[data-user-agent*=iPhone] #slide15 img {
+  width: 130px;
+  right: 20px;
+  bottom: 20px;
+}
+html[data-user-agent*=iPhone] .ipads {
+  height: 160px;
+}
+html[data-user-agent*=iPhone] .ipads > p {
+  width: 29.33%;
+  margin: 0 2%;
+  font-size: 10px;
+}
+html[data-user-agent*=iPhone] .boxes-container {
+  margin-bottom: 20px;
+}
+html[data-user-agent*=iPhone] .boxes-container:nth-child(3n-2) {
+  padding-right: 15px;
+}
+html[data-user-agent*=iPhone] .boxes-container:nth-child(3n-1) {
+  padding: 0 7.5px;
+}
+html[data-user-agent*=iPhone] .boxes-container:nth-child(3n-3) {
+  padding-left: 15px;
+}
+html[data-user-agent*=iPhone] #backtotop {
+  display: none;
+}
+html[data-user-agent*=Safari] body {
+  color: #f00 !important;
 }

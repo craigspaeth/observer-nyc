@@ -1,15 +1,19 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var highlightNav, setSlideHeight, setupClickHeaderNav, setupSlide1Arrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
+var IS_IPAD, IS_IPHONE, adjustForIOS, highlightNav, setSlideHeight, setupBacktoTop, setupClickHeaderNav, setupSlide1Arrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
 
 require('jquery-waypoints/waypoints.js');
 
 _ = require('underscore');
 
+IS_IPHONE = navigator.userAgent.match(/iPhone/i);
+
+IS_IPAD = navigator.userAgent.match(/iPad/i);
+
 setupClickHeaderNav = function() {
   return $('#header-nav a').click(function(e) {
     var top;
     e.preventDefault();
-    top = $("#" + ($(this).attr('href'))).offset().top - 120;
+    top = $("#" + ($(this).attr('href'))).offset().top + 90;
     return $('body, html').animate({
       scrollTop: top
     });
@@ -94,7 +98,7 @@ setupWaypoints = function() {
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $(this)[fn]('is-active');
   }, {
-    offset: '-20%'
+    offset: '-10%'
   });
   $('#slide15').waypoint(function(dir) {
     var fn;
@@ -107,6 +111,14 @@ setupWaypoints = function() {
     var fn;
     fn = (dir === 'down' ? 'remove' : 'add') + 'Class';
     return $('#header-nav')[fn]('is-active');
+  });
+};
+
+setupBacktoTop = function() {
+  return $('#backtotop').click(function() {
+    return $('body, html').animate({
+      scrollTop: 0
+    }, 1500);
   });
 };
 
@@ -163,15 +175,33 @@ highlightNav = function() {
   }
 };
 
+adjustForIOS = function() {
+  $('.slide, .ipads').addClass('is-active');
+  $("#slide4 svg rect[idx]").each(function() {
+    return $(this).attr('height', 0);
+  });
+  $('#slide1, #slide15').css({
+    height: $(window).height()
+  });
+  return $('#slide2').css({
+    height: $(window).height()
+  });
+};
+
 $(function() {
-  $(window).on('resize', _.debounce(setSlideHeight, 100));
-  $(window).on('scroll', transitionBGStart);
-  $(window).on('scroll', transitionBGEnd);
-  $(window).on('scroll', highlightNav);
-  setSlideHeight();
-  setupWaypoints();
+  if (IS_IPHONE || IS_IPAD) {
+    adjustForIOS();
+  } else {
+    $(window).on('resize', _.debounce(setSlideHeight, 100));
+    $(window).on('scroll', transitionBGStart);
+    $(window).on('scroll', transitionBGEnd);
+    $(window).on('scroll', highlightNav);
+    setSlideHeight();
+    setupWaypoints();
+  }
   setupClickHeaderNav();
   setupSlide1Arrow();
+  setupBacktoTop();
   return $('#slide1').addClass('is-active');
 });
 

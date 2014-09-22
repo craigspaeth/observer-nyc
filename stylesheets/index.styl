@@ -1,12 +1,6 @@
 @import '../node_modules/nib'
 @import 'fonts'
-
-ease-in-cubic = cubic-bezier(0.550, 0.055, 0.675, 0.190)
-ease-out-quart = cubic-bezier(0.165, 0.840, 0.440, 1.000)
-ease-out-quad = cubic-bezier(0.250, 0.460, 0.450, 0.940)
-ease-in-out-quad = cubic-bezier(0.455, 0.030, 0.515, 0.955)
-main-margin = 60px
-body-font-size = 24px
+@import 'lib'
 
 global-reset()
 
@@ -27,14 +21,14 @@ a
 
 .slide
   position relative
-  padding 200px 0
+  padding 200px main-margin
 
 .long-body, .long-body-large
-  font-family Georgia
+  font-family PTSerif
   font-size body-font-size
 
 .long-body-large
-  font-size 42px
+  font-size 38px
   line-height 1.2em
 
 .img-spacer
@@ -58,7 +52,6 @@ a
   width 1024px
   margin auto
   display block
-  padding 0 main-margin
   img
     max-width 100%
     display block
@@ -92,29 +85,33 @@ a
     &:hover, &.is-active
       color white
 
+#header-nav-inner
+  min-width 855px
+
 #slide1
   &.is-active
     img
       opacity 1
     #slide1-down-arrow
       bottom 80px
-      left 0
       opacity 1
   img
     position absolute
     width 400px
     top 50%
-    margin-top -30px
+    margin-top -50px
     left 50%
     margin-left -(@width / 2)
     opacity 0
     transition opacity 1s ease-in-cubic
 
-#slide1-down-arrow
+#slide1-down-arrow, #backtotop
   background url('images/down-arrow.svg') no-repeat center center
   background-size 30px
   height 30px
-  width 100%
+  width 100px
+  left 50%
+  margin-left -(@width / 2s)
   position absolute
   bottom -30px
   opacity 0
@@ -122,13 +119,13 @@ a
   cursor pointer
 
 #slide2
-  margin-bottom -210px
+  margin-bottom -180px
   position relative
   &.is-active
     .reveal-screen
       width 0%
   h1
-    font-family Georgia
+    font-family PTSerif
     text-align center
     text-transform uppercase
     font-size 34px
@@ -164,7 +161,7 @@ a
   padding-top 100px
   position relative
   h1
-    font-family Georgia
+    font-family PTSerif
     text-transform none
     line-height 10px
     font-weight normal
@@ -173,7 +170,7 @@ a
   img
     position absolute
     bottom 100px
-    right 0
+    right main-margin
     height 40px
 
 .boxes-container
@@ -272,9 +269,18 @@ a
     transition opacity 1s ease-in-cubic
   img
     transition opacity 0.3s ease-in 1.3s
+  #backtotop
+    opacity 0
+    bottom 0
+    transform rotateX(180deg)
+    transition-duration 0s
+    transition opacity 0.3s ease-in 2s
+    transition bottom 0.3s ease-out-quart 2s, opacity 0.3s ease-in 2s
   &.is-active
-    .benton-black-h, img
+    .benton-black-h, img, #backtotop
       opacity 1
+    #backtotop
+      bottom 100px
 
 #grid-container
   position relative
@@ -297,3 +303,8 @@ a
     background white
     transition width 0.3s ease-out-quad 0.9s
     width 100%
+  svg
+    position relative
+    left -145px
+
+@import 'devices'

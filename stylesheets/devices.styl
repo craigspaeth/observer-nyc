@@ -1,0 +1,98 @@
+@import 'lib'
+
+
+html[data-user-agent*=iPad], html[data-user-agent*=iPhone]
+  #main
+    width auto
+  body
+    color rgb(40,40,40)
+    background white
+  #slide2 h1
+    font-size 26px
+  .benton-black-h
+    font-size 76px !important
+    line-height 72px
+  .ipads
+    height 290px
+    > p
+      width 27.33%
+      margin 0 3%
+  #grid-container
+    height 430px
+    position relative
+    left -90px
+    #grid-stands-alone
+      font-size 14px
+      top 90px
+      right -100px
+      padding 20px 25px 16px 25px
+  .slide
+    padding 100px main-margin
+    border-top 1px solid #ddd
+  #slide1, #slide2, #slide3, #slide11, #slide12, #slide13, #slide14, #slide15
+    background black
+    color white
+    border-top 0
+  #slide3
+    margin-bottom -40px
+  #slide4
+    border-top 0
+  #slide11
+    margin-top 80px
+  #slide2
+    position relative
+    h1
+      position absolute
+      top 50%
+      width 100%
+      left 0
+      margin-top -50px
+  #luxury-graph-mobile
+    border-bottom 1px solid #ccc
+
+html[data-user-agent*=iPhone]
+  .benton-black-h
+    font-size 35px !important
+    line-height 34px
+  .slide
+    padding 100px 20px
+  .caption
+    font-size 10px
+  .long-body
+    font-size 16px
+  .long-body-large
+    font-size 22px
+  #slide1
+    img
+      width 250px
+      margin-left -125px
+  #slide2 h1
+    font-size 18px
+  #slide6
+    h1
+      font-size 32px !important
+  #slide15
+    img
+      width 130px
+      right 20px
+      bottom 20px
+  .ipads
+    height 160px
+    > p
+      width 29.33%
+      margin 0 2%
+      font-size 10px
+  .boxes-container
+    margin-bottom 20px
+    &:nth-child(3n-2)
+      padding-right 15px
+    &:nth-child(3n-1)
+      padding 0 7.5px
+    &:nth-child(3n-3)
+      padding-left 15px
+  #backtotop
+    display none
+
+html[data-user-agent*=Safari]
+  body
+    color red !important

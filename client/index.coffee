@@ -1,10 +1,13 @@
 require 'jquery-waypoints/waypoints.js'
 _ = require 'underscore'
 
+IS_IPHONE = navigator.userAgent.match(/iPhone/i)
+IS_IPAD = navigator.userAgent.match(/iPad/i)
+
 setupClickHeaderNav = ->
   $('#header-nav a').click (e) ->
     e.preventDefault()
-    top = $("##{$(this).attr('href')}").offset().top - 120
+    top = $("##{$(this).attr('href')}").offset().top + 90
     $('body, html').animate scrollTop: top
 
 setupSlide1Arrow = ->
@@ -65,7 +68,7 @@ setupWaypoints = ->
   $('#slide9').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this)[fn] 'is-active'
-  , offset: '-20%' 
+  , offset: '-10%' 
 
   # Fade in last frame
   $('#slide15').waypoint (dir) ->
@@ -77,6 +80,10 @@ setupWaypoints = ->
   $('#slide9 + .slide').waypoint (dir) ->
     fn = (if dir is 'down' then 'remove' else 'add') + 'Class'
     $('#header-nav')[fn] 'is-active'
+
+setupBacktoTop = ->
+  $('#backtotop').click ->
+    $('body, html').animate scrollTop: 0, 1500
 
 setSlideHeight = ->
   $('.slide').css 'min-height': $(window).height()
@@ -110,13 +117,23 @@ highlightNav = ->
       $(el).addClass 'is-active'
       break
 
+adjustForIOS = ->
+  $('.slide, .ipads').addClass 'is-active'
+  $("#slide4 svg rect[idx]").each -> $(this).attr 'height', 0
+  $('#slide1, #slide15').css height: $(window).height()
+  $('#slide2').css height: $(window).height()
+
 $ ->
-  $(window).on 'resize', _.debounce setSlideHeight, 100
-  $(window).on 'scroll', transitionBGStart
-  $(window).on 'scroll', transitionBGEnd
-  $(window).on 'scroll', highlightNav
-  setSlideHeight()
-  setupWaypoints()
+  if IS_IPHONE or IS_IPAD
+    adjustForIOS()
+  else
+    $(window).on 'resize', _.debounce setSlideHeight, 100
+    $(window).on 'scroll', transitionBGStart
+    $(window).on 'scroll', transitionBGEnd
+    $(window).on 'scroll', highlightNav
+    setSlideHeight()
+    setupWaypoints()
   setupClickHeaderNav()
   setupSlide1Arrow()
+  setupBacktoTop()
   $('#slide1').addClass 'is-active'

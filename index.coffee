@@ -18,7 +18,7 @@ app.use express.static __dirname + '/public'
 
 # routes
 app.get '/', (req, res) ->
-  res.render 'index'
+  res.render 'index', userAgent: req.headers['user-agent']
 
 # start
 app.listen port = process.env.PORT or 4000, ->
