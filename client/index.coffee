@@ -52,6 +52,12 @@ setupWaypoints = ->
         setTimeout fn($("#slide4 svg rect[idx=\"#{4 - i}\"]")), 50 * i
   , offset: -80 
 
+  # Topple scale
+  $('#slide8').waypoint (dir) ->
+    fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
+    $(this)[fn] 'is-active'
+  , offset: -80
+
   # Show ipads
   $('#slide5, #slide7').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'

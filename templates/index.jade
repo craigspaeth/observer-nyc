@@ -73,7 +73,16 @@ html( lang="en" data-user-agent=userAgent )
       section#slide8.slide
         p.long-body Studies show that the top earners in the United States are becoming increasingly wealthy, concentrating the vast majority of wealth in the hands of a few. Most popular internet sites target the majority of the country and neglect the nation’s most affluent individuals—Observer.com reaches them.
         .img-spacer
-        img( src='/images/slide8-content.jpg' )
+        #scale-container
+          #scale-indicator
+            include ../public/images/scale-indicator.svg
+          #scale-bg
+            include ../public/images/scale-bg.svg
+          #scale-fg
+            #scale-bars
+              include ../public/images/scale-fg-bars.svg
+            #scale-ppl
+              include ../public/images/scale-fg-ppl.svg
         small.caption Source: www2.ucsc.edu/whorulesamerica/power/wealth.html
         
       section#slide9.slide

@@ -331,6 +331,759 @@ a {
 #slide6.is-active .reveal-screen {
   width: 0%;
 }
+#slide8 #scale-bars polygon {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -moz-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -ms-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+#slide8 #scale-bars polygon:nth-child(1) {
+  -webkit-transition-delay: 990ms;
+  -moz-transition-delay: 990ms;
+  -o-transition-delay: 990ms;
+  -ms-transition-delay: 990ms;
+  transition-delay: 990ms;
+}
+#slide8 #scale-bars polygon:nth-child(2) {
+  -webkit-transition-delay: 980ms;
+  -moz-transition-delay: 980ms;
+  -o-transition-delay: 980ms;
+  -ms-transition-delay: 980ms;
+  transition-delay: 980ms;
+}
+#slide8 #scale-bars polygon:nth-child(3) {
+  -webkit-transition-delay: 970ms;
+  -moz-transition-delay: 970ms;
+  -o-transition-delay: 970ms;
+  -ms-transition-delay: 970ms;
+  transition-delay: 970ms;
+}
+#slide8 #scale-bars polygon:nth-child(4) {
+  -webkit-transition-delay: 960ms;
+  -moz-transition-delay: 960ms;
+  -o-transition-delay: 960ms;
+  -ms-transition-delay: 960ms;
+  transition-delay: 960ms;
+}
+#slide8 #scale-bars polygon:nth-child(5) {
+  -webkit-transition-delay: 950ms;
+  -moz-transition-delay: 950ms;
+  -o-transition-delay: 950ms;
+  -ms-transition-delay: 950ms;
+  transition-delay: 950ms;
+}
+#slide8 #scale-bars polygon:nth-child(6) {
+  -webkit-transition-delay: 940ms;
+  -moz-transition-delay: 940ms;
+  -o-transition-delay: 940ms;
+  -ms-transition-delay: 940ms;
+  transition-delay: 940ms;
+}
+#slide8 #scale-bars polygon:nth-child(7) {
+  -webkit-transition-delay: 930ms;
+  -moz-transition-delay: 930ms;
+  -o-transition-delay: 930ms;
+  -ms-transition-delay: 930ms;
+  transition-delay: 930ms;
+}
+#slide8 #scale-bars polygon:nth-child(8) {
+  -webkit-transition-delay: 920ms;
+  -moz-transition-delay: 920ms;
+  -o-transition-delay: 920ms;
+  -ms-transition-delay: 920ms;
+  transition-delay: 920ms;
+}
+#slide8 #scale-bars polygon:nth-child(9) {
+  -webkit-transition-delay: 910ms;
+  -moz-transition-delay: 910ms;
+  -o-transition-delay: 910ms;
+  -ms-transition-delay: 910ms;
+  transition-delay: 910ms;
+}
+#slide8 #scale-bars polygon:nth-child(10) {
+  -webkit-transition-delay: 900ms;
+  -moz-transition-delay: 900ms;
+  -o-transition-delay: 900ms;
+  -ms-transition-delay: 900ms;
+  transition-delay: 900ms;
+}
+#slide8 #scale-bars polygon:nth-child(11) {
+  -webkit-transition-delay: 890ms;
+  -moz-transition-delay: 890ms;
+  -o-transition-delay: 890ms;
+  -ms-transition-delay: 890ms;
+  transition-delay: 890ms;
+}
+#slide8 #scale-bars polygon:nth-child(12) {
+  -webkit-transition-delay: 880ms;
+  -moz-transition-delay: 880ms;
+  -o-transition-delay: 880ms;
+  -ms-transition-delay: 880ms;
+  transition-delay: 880ms;
+}
+#slide8 #scale-bars polygon:nth-child(13) {
+  -webkit-transition-delay: 870ms;
+  -moz-transition-delay: 870ms;
+  -o-transition-delay: 870ms;
+  -ms-transition-delay: 870ms;
+  transition-delay: 870ms;
+}
+#slide8 #scale-bars polygon:nth-child(14) {
+  -webkit-transition-delay: 860ms;
+  -moz-transition-delay: 860ms;
+  -o-transition-delay: 860ms;
+  -ms-transition-delay: 860ms;
+  transition-delay: 860ms;
+}
+#slide8 #scale-bars polygon:nth-child(15) {
+  -webkit-transition-delay: 850ms;
+  -moz-transition-delay: 850ms;
+  -o-transition-delay: 850ms;
+  -ms-transition-delay: 850ms;
+  transition-delay: 850ms;
+}
+#slide8 #scale-bars polygon:nth-child(16) {
+  -webkit-transition-delay: 840ms;
+  -moz-transition-delay: 840ms;
+  -o-transition-delay: 840ms;
+  -ms-transition-delay: 840ms;
+  transition-delay: 840ms;
+}
+#slide8 #scale-bars polygon:nth-child(17) {
+  -webkit-transition-delay: 830ms;
+  -moz-transition-delay: 830ms;
+  -o-transition-delay: 830ms;
+  -ms-transition-delay: 830ms;
+  transition-delay: 830ms;
+}
+#slide8 #scale-bars polygon:nth-child(18) {
+  -webkit-transition-delay: 820ms;
+  -moz-transition-delay: 820ms;
+  -o-transition-delay: 820ms;
+  -ms-transition-delay: 820ms;
+  transition-delay: 820ms;
+}
+#slide8 #scale-bars polygon:nth-child(19) {
+  -webkit-transition-delay: 810ms;
+  -moz-transition-delay: 810ms;
+  -o-transition-delay: 810ms;
+  -ms-transition-delay: 810ms;
+  transition-delay: 810ms;
+}
+#slide8 #scale-bars polygon:nth-child(20) {
+  -webkit-transition-delay: 800ms;
+  -moz-transition-delay: 800ms;
+  -o-transition-delay: 800ms;
+  -ms-transition-delay: 800ms;
+  transition-delay: 800ms;
+}
+#slide8 #scale-bars polygon:nth-child(21) {
+  -webkit-transition-delay: 790ms;
+  -moz-transition-delay: 790ms;
+  -o-transition-delay: 790ms;
+  -ms-transition-delay: 790ms;
+  transition-delay: 790ms;
+}
+#slide8 #scale-bars polygon:nth-child(22) {
+  -webkit-transition-delay: 780ms;
+  -moz-transition-delay: 780ms;
+  -o-transition-delay: 780ms;
+  -ms-transition-delay: 780ms;
+  transition-delay: 780ms;
+}
+#slide8 #scale-bars polygon:nth-child(23) {
+  -webkit-transition-delay: 770ms;
+  -moz-transition-delay: 770ms;
+  -o-transition-delay: 770ms;
+  -ms-transition-delay: 770ms;
+  transition-delay: 770ms;
+}
+#slide8 #scale-bars polygon:nth-child(24) {
+  -webkit-transition-delay: 760ms;
+  -moz-transition-delay: 760ms;
+  -o-transition-delay: 760ms;
+  -ms-transition-delay: 760ms;
+  transition-delay: 760ms;
+}
+#slide8 #scale-bars polygon:nth-child(25) {
+  -webkit-transition-delay: 750ms;
+  -moz-transition-delay: 750ms;
+  -o-transition-delay: 750ms;
+  -ms-transition-delay: 750ms;
+  transition-delay: 750ms;
+}
+#slide8 #scale-bars polygon:nth-child(26) {
+  -webkit-transition-delay: 740ms;
+  -moz-transition-delay: 740ms;
+  -o-transition-delay: 740ms;
+  -ms-transition-delay: 740ms;
+  transition-delay: 740ms;
+}
+#slide8 #scale-bars polygon:nth-child(27) {
+  -webkit-transition-delay: 730ms;
+  -moz-transition-delay: 730ms;
+  -o-transition-delay: 730ms;
+  -ms-transition-delay: 730ms;
+  transition-delay: 730ms;
+}
+#slide8 #scale-bars polygon:nth-child(28) {
+  -webkit-transition-delay: 720ms;
+  -moz-transition-delay: 720ms;
+  -o-transition-delay: 720ms;
+  -ms-transition-delay: 720ms;
+  transition-delay: 720ms;
+}
+#slide8 #scale-bars polygon:nth-child(29) {
+  -webkit-transition-delay: 710ms;
+  -moz-transition-delay: 710ms;
+  -o-transition-delay: 710ms;
+  -ms-transition-delay: 710ms;
+  transition-delay: 710ms;
+}
+#slide8 #scale-bars polygon:nth-child(30) {
+  -webkit-transition-delay: 700ms;
+  -moz-transition-delay: 700ms;
+  -o-transition-delay: 700ms;
+  -ms-transition-delay: 700ms;
+  transition-delay: 700ms;
+}
+#slide8 #scale-bars polygon:nth-child(31) {
+  -webkit-transition-delay: 690ms;
+  -moz-transition-delay: 690ms;
+  -o-transition-delay: 690ms;
+  -ms-transition-delay: 690ms;
+  transition-delay: 690ms;
+}
+#slide8 #scale-bars polygon:nth-child(32) {
+  -webkit-transition-delay: 680ms;
+  -moz-transition-delay: 680ms;
+  -o-transition-delay: 680ms;
+  -ms-transition-delay: 680ms;
+  transition-delay: 680ms;
+}
+#slide8 #scale-bars polygon:nth-child(33) {
+  -webkit-transition-delay: 670ms;
+  -moz-transition-delay: 670ms;
+  -o-transition-delay: 670ms;
+  -ms-transition-delay: 670ms;
+  transition-delay: 670ms;
+}
+#slide8 #scale-bars polygon:nth-child(34) {
+  -webkit-transition-delay: 660ms;
+  -moz-transition-delay: 660ms;
+  -o-transition-delay: 660ms;
+  -ms-transition-delay: 660ms;
+  transition-delay: 660ms;
+}
+#slide8 #scale-bars polygon:nth-child(35) {
+  -webkit-transition-delay: 650ms;
+  -moz-transition-delay: 650ms;
+  -o-transition-delay: 650ms;
+  -ms-transition-delay: 650ms;
+  transition-delay: 650ms;
+}
+#slide8 #scale-bars polygon:nth-child(36) {
+  -webkit-transition-delay: 640ms;
+  -moz-transition-delay: 640ms;
+  -o-transition-delay: 640ms;
+  -ms-transition-delay: 640ms;
+  transition-delay: 640ms;
+}
+#slide8 #scale-bars polygon:nth-child(37) {
+  -webkit-transition-delay: 630ms;
+  -moz-transition-delay: 630ms;
+  -o-transition-delay: 630ms;
+  -ms-transition-delay: 630ms;
+  transition-delay: 630ms;
+}
+#slide8 #scale-bars polygon:nth-child(38) {
+  -webkit-transition-delay: 620ms;
+  -moz-transition-delay: 620ms;
+  -o-transition-delay: 620ms;
+  -ms-transition-delay: 620ms;
+  transition-delay: 620ms;
+}
+#slide8 #scale-bars polygon:nth-child(39) {
+  -webkit-transition-delay: 610ms;
+  -moz-transition-delay: 610ms;
+  -o-transition-delay: 610ms;
+  -ms-transition-delay: 610ms;
+  transition-delay: 610ms;
+}
+#slide8 #scale-bars polygon:nth-child(40) {
+  -webkit-transition-delay: 600ms;
+  -moz-transition-delay: 600ms;
+  -o-transition-delay: 600ms;
+  -ms-transition-delay: 600ms;
+  transition-delay: 600ms;
+}
+#slide8 #scale-bars polygon:nth-child(41) {
+  -webkit-transition-delay: 590ms;
+  -moz-transition-delay: 590ms;
+  -o-transition-delay: 590ms;
+  -ms-transition-delay: 590ms;
+  transition-delay: 590ms;
+}
+#slide8 #scale-bars polygon:nth-child(42) {
+  -webkit-transition-delay: 580ms;
+  -moz-transition-delay: 580ms;
+  -o-transition-delay: 580ms;
+  -ms-transition-delay: 580ms;
+  transition-delay: 580ms;
+}
+#slide8 #scale-bars polygon:nth-child(43) {
+  -webkit-transition-delay: 570ms;
+  -moz-transition-delay: 570ms;
+  -o-transition-delay: 570ms;
+  -ms-transition-delay: 570ms;
+  transition-delay: 570ms;
+}
+#slide8 #scale-bars polygon:nth-child(44) {
+  -webkit-transition-delay: 560ms;
+  -moz-transition-delay: 560ms;
+  -o-transition-delay: 560ms;
+  -ms-transition-delay: 560ms;
+  transition-delay: 560ms;
+}
+#slide8 #scale-bars polygon:nth-child(45) {
+  -webkit-transition-delay: 550ms;
+  -moz-transition-delay: 550ms;
+  -o-transition-delay: 550ms;
+  -ms-transition-delay: 550ms;
+  transition-delay: 550ms;
+}
+#slide8 #scale-bars polygon:nth-child(46) {
+  -webkit-transition-delay: 540ms;
+  -moz-transition-delay: 540ms;
+  -o-transition-delay: 540ms;
+  -ms-transition-delay: 540ms;
+  transition-delay: 540ms;
+}
+#slide8 #scale-bars polygon:nth-child(47) {
+  -webkit-transition-delay: 530ms;
+  -moz-transition-delay: 530ms;
+  -o-transition-delay: 530ms;
+  -ms-transition-delay: 530ms;
+  transition-delay: 530ms;
+}
+#slide8 #scale-bars polygon:nth-child(48) {
+  -webkit-transition-delay: 520ms;
+  -moz-transition-delay: 520ms;
+  -o-transition-delay: 520ms;
+  -ms-transition-delay: 520ms;
+  transition-delay: 520ms;
+}
+#slide8 #scale-bars polygon:nth-child(49) {
+  -webkit-transition-delay: 510ms;
+  -moz-transition-delay: 510ms;
+  -o-transition-delay: 510ms;
+  -ms-transition-delay: 510ms;
+  transition-delay: 510ms;
+}
+#slide8 #scale-bars polygon:nth-child(50) {
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  -ms-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+#slide8 #scale-bars polygon:nth-child(51) {
+  -webkit-transition-delay: 490ms;
+  -moz-transition-delay: 490ms;
+  -o-transition-delay: 490ms;
+  -ms-transition-delay: 490ms;
+  transition-delay: 490ms;
+}
+#slide8 #scale-bars polygon:nth-child(52) {
+  -webkit-transition-delay: 480ms;
+  -moz-transition-delay: 480ms;
+  -o-transition-delay: 480ms;
+  -ms-transition-delay: 480ms;
+  transition-delay: 480ms;
+}
+#slide8 #scale-bars polygon:nth-child(53) {
+  -webkit-transition-delay: 470ms;
+  -moz-transition-delay: 470ms;
+  -o-transition-delay: 470ms;
+  -ms-transition-delay: 470ms;
+  transition-delay: 470ms;
+}
+#slide8 #scale-bars polygon:nth-child(54) {
+  -webkit-transition-delay: 460ms;
+  -moz-transition-delay: 460ms;
+  -o-transition-delay: 460ms;
+  -ms-transition-delay: 460ms;
+  transition-delay: 460ms;
+}
+#slide8 #scale-bars polygon:nth-child(55) {
+  -webkit-transition-delay: 450ms;
+  -moz-transition-delay: 450ms;
+  -o-transition-delay: 450ms;
+  -ms-transition-delay: 450ms;
+  transition-delay: 450ms;
+}
+#slide8 #scale-bars polygon:nth-child(56) {
+  -webkit-transition-delay: 440ms;
+  -moz-transition-delay: 440ms;
+  -o-transition-delay: 440ms;
+  -ms-transition-delay: 440ms;
+  transition-delay: 440ms;
+}
+#slide8 #scale-bars polygon:nth-child(57) {
+  -webkit-transition-delay: 430ms;
+  -moz-transition-delay: 430ms;
+  -o-transition-delay: 430ms;
+  -ms-transition-delay: 430ms;
+  transition-delay: 430ms;
+}
+#slide8 #scale-bars polygon:nth-child(58) {
+  -webkit-transition-delay: 420ms;
+  -moz-transition-delay: 420ms;
+  -o-transition-delay: 420ms;
+  -ms-transition-delay: 420ms;
+  transition-delay: 420ms;
+}
+#slide8 #scale-bars polygon:nth-child(59) {
+  -webkit-transition-delay: 410ms;
+  -moz-transition-delay: 410ms;
+  -o-transition-delay: 410ms;
+  -ms-transition-delay: 410ms;
+  transition-delay: 410ms;
+}
+#slide8 #scale-bars polygon:nth-child(60) {
+  -webkit-transition-delay: 400ms;
+  -moz-transition-delay: 400ms;
+  -o-transition-delay: 400ms;
+  -ms-transition-delay: 400ms;
+  transition-delay: 400ms;
+}
+#slide8 #scale-bars polygon:nth-child(61) {
+  -webkit-transition-delay: 390ms;
+  -moz-transition-delay: 390ms;
+  -o-transition-delay: 390ms;
+  -ms-transition-delay: 390ms;
+  transition-delay: 390ms;
+}
+#slide8 #scale-bars polygon:nth-child(62) {
+  -webkit-transition-delay: 380ms;
+  -moz-transition-delay: 380ms;
+  -o-transition-delay: 380ms;
+  -ms-transition-delay: 380ms;
+  transition-delay: 380ms;
+}
+#slide8 #scale-bars polygon:nth-child(63) {
+  -webkit-transition-delay: 370ms;
+  -moz-transition-delay: 370ms;
+  -o-transition-delay: 370ms;
+  -ms-transition-delay: 370ms;
+  transition-delay: 370ms;
+}
+#slide8 #scale-bars polygon:nth-child(64) {
+  -webkit-transition-delay: 360ms;
+  -moz-transition-delay: 360ms;
+  -o-transition-delay: 360ms;
+  -ms-transition-delay: 360ms;
+  transition-delay: 360ms;
+}
+#slide8 #scale-bars polygon:nth-child(65) {
+  -webkit-transition-delay: 350ms;
+  -moz-transition-delay: 350ms;
+  -o-transition-delay: 350ms;
+  -ms-transition-delay: 350ms;
+  transition-delay: 350ms;
+}
+#slide8 #scale-bars polygon:nth-child(66) {
+  -webkit-transition-delay: 340ms;
+  -moz-transition-delay: 340ms;
+  -o-transition-delay: 340ms;
+  -ms-transition-delay: 340ms;
+  transition-delay: 340ms;
+}
+#slide8 #scale-bars polygon:nth-child(67) {
+  -webkit-transition-delay: 330ms;
+  -moz-transition-delay: 330ms;
+  -o-transition-delay: 330ms;
+  -ms-transition-delay: 330ms;
+  transition-delay: 330ms;
+}
+#slide8 #scale-bars polygon:nth-child(68) {
+  -webkit-transition-delay: 320ms;
+  -moz-transition-delay: 320ms;
+  -o-transition-delay: 320ms;
+  -ms-transition-delay: 320ms;
+  transition-delay: 320ms;
+}
+#slide8 #scale-bars polygon:nth-child(69) {
+  -webkit-transition-delay: 310ms;
+  -moz-transition-delay: 310ms;
+  -o-transition-delay: 310ms;
+  -ms-transition-delay: 310ms;
+  transition-delay: 310ms;
+}
+#slide8 #scale-bars polygon:nth-child(70) {
+  -webkit-transition-delay: 300ms;
+  -moz-transition-delay: 300ms;
+  -o-transition-delay: 300ms;
+  -ms-transition-delay: 300ms;
+  transition-delay: 300ms;
+}
+#slide8 #scale-bars polygon:nth-child(71) {
+  -webkit-transition-delay: 290ms;
+  -moz-transition-delay: 290ms;
+  -o-transition-delay: 290ms;
+  -ms-transition-delay: 290ms;
+  transition-delay: 290ms;
+}
+#slide8 #scale-bars polygon:nth-child(72) {
+  -webkit-transition-delay: 280ms;
+  -moz-transition-delay: 280ms;
+  -o-transition-delay: 280ms;
+  -ms-transition-delay: 280ms;
+  transition-delay: 280ms;
+}
+#slide8 #scale-bars polygon:nth-child(73) {
+  -webkit-transition-delay: 270ms;
+  -moz-transition-delay: 270ms;
+  -o-transition-delay: 270ms;
+  -ms-transition-delay: 270ms;
+  transition-delay: 270ms;
+}
+#slide8 #scale-bars polygon:nth-child(74) {
+  -webkit-transition-delay: 260ms;
+  -moz-transition-delay: 260ms;
+  -o-transition-delay: 260ms;
+  -ms-transition-delay: 260ms;
+  transition-delay: 260ms;
+}
+#slide8 #scale-bars polygon:nth-child(75) {
+  -webkit-transition-delay: 250ms;
+  -moz-transition-delay: 250ms;
+  -o-transition-delay: 250ms;
+  -ms-transition-delay: 250ms;
+  transition-delay: 250ms;
+}
+#slide8 #scale-bars polygon:nth-child(76) {
+  -webkit-transition-delay: 240ms;
+  -moz-transition-delay: 240ms;
+  -o-transition-delay: 240ms;
+  -ms-transition-delay: 240ms;
+  transition-delay: 240ms;
+}
+#slide8 #scale-bars polygon:nth-child(77) {
+  -webkit-transition-delay: 230ms;
+  -moz-transition-delay: 230ms;
+  -o-transition-delay: 230ms;
+  -ms-transition-delay: 230ms;
+  transition-delay: 230ms;
+}
+#slide8 #scale-bars polygon:nth-child(78) {
+  -webkit-transition-delay: 220ms;
+  -moz-transition-delay: 220ms;
+  -o-transition-delay: 220ms;
+  -ms-transition-delay: 220ms;
+  transition-delay: 220ms;
+}
+#slide8 #scale-bars polygon:nth-child(79) {
+  -webkit-transition-delay: 210ms;
+  -moz-transition-delay: 210ms;
+  -o-transition-delay: 210ms;
+  -ms-transition-delay: 210ms;
+  transition-delay: 210ms;
+}
+#slide8 #scale-bars polygon:nth-child(80) {
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  -ms-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+#slide8 #scale-bars polygon:nth-child(81) {
+  -webkit-transition-delay: 190ms;
+  -moz-transition-delay: 190ms;
+  -o-transition-delay: 190ms;
+  -ms-transition-delay: 190ms;
+  transition-delay: 190ms;
+}
+#slide8 #scale-bars polygon:nth-child(82) {
+  -webkit-transition-delay: 180ms;
+  -moz-transition-delay: 180ms;
+  -o-transition-delay: 180ms;
+  -ms-transition-delay: 180ms;
+  transition-delay: 180ms;
+}
+#slide8 #scale-bars polygon:nth-child(83) {
+  -webkit-transition-delay: 170ms;
+  -moz-transition-delay: 170ms;
+  -o-transition-delay: 170ms;
+  -ms-transition-delay: 170ms;
+  transition-delay: 170ms;
+}
+#slide8 #scale-bars polygon:nth-child(84) {
+  -webkit-transition-delay: 160ms;
+  -moz-transition-delay: 160ms;
+  -o-transition-delay: 160ms;
+  -ms-transition-delay: 160ms;
+  transition-delay: 160ms;
+}
+#slide8 #scale-bars polygon:nth-child(85) {
+  -webkit-transition-delay: 150ms;
+  -moz-transition-delay: 150ms;
+  -o-transition-delay: 150ms;
+  -ms-transition-delay: 150ms;
+  transition-delay: 150ms;
+}
+#slide8 #scale-bars polygon:nth-child(86) {
+  -webkit-transition-delay: 140ms;
+  -moz-transition-delay: 140ms;
+  -o-transition-delay: 140ms;
+  -ms-transition-delay: 140ms;
+  transition-delay: 140ms;
+}
+#slide8 #scale-bars polygon:nth-child(87) {
+  -webkit-transition-delay: 130ms;
+  -moz-transition-delay: 130ms;
+  -o-transition-delay: 130ms;
+  -ms-transition-delay: 130ms;
+  transition-delay: 130ms;
+}
+#slide8 #scale-bars polygon:nth-child(88) {
+  -webkit-transition-delay: 120ms;
+  -moz-transition-delay: 120ms;
+  -o-transition-delay: 120ms;
+  -ms-transition-delay: 120ms;
+  transition-delay: 120ms;
+}
+#slide8 #scale-bars polygon:nth-child(89) {
+  -webkit-transition-delay: 110ms;
+  -moz-transition-delay: 110ms;
+  -o-transition-delay: 110ms;
+  -ms-transition-delay: 110ms;
+  transition-delay: 110ms;
+}
+#slide8 #scale-bars polygon:nth-child(90) {
+  -webkit-transition-delay: 100ms;
+  -moz-transition-delay: 100ms;
+  -o-transition-delay: 100ms;
+  -ms-transition-delay: 100ms;
+  transition-delay: 100ms;
+}
+#slide8 #scale-bars polygon:nth-child(91) {
+  -webkit-transition-delay: 90ms;
+  -moz-transition-delay: 90ms;
+  -o-transition-delay: 90ms;
+  -ms-transition-delay: 90ms;
+  transition-delay: 90ms;
+}
+#slide8 #scale-bars polygon:nth-child(92) {
+  -webkit-transition-delay: 80ms;
+  -moz-transition-delay: 80ms;
+  -o-transition-delay: 80ms;
+  -ms-transition-delay: 80ms;
+  transition-delay: 80ms;
+}
+#slide8 #scale-bars polygon:nth-child(93) {
+  -webkit-transition-delay: 70ms;
+  -moz-transition-delay: 70ms;
+  -o-transition-delay: 70ms;
+  -ms-transition-delay: 70ms;
+  transition-delay: 70ms;
+}
+#slide8 #scale-bars polygon:nth-child(94) {
+  -webkit-transition-delay: 60ms;
+  -moz-transition-delay: 60ms;
+  -o-transition-delay: 60ms;
+  -ms-transition-delay: 60ms;
+  transition-delay: 60ms;
+}
+#slide8 #scale-bars polygon:nth-child(95) {
+  -webkit-transition-delay: 50ms;
+  -moz-transition-delay: 50ms;
+  -o-transition-delay: 50ms;
+  -ms-transition-delay: 50ms;
+  transition-delay: 50ms;
+}
+#slide8 #scale-bars polygon:nth-child(96) {
+  -webkit-transition-delay: 40ms;
+  -moz-transition-delay: 40ms;
+  -o-transition-delay: 40ms;
+  -ms-transition-delay: 40ms;
+  transition-delay: 40ms;
+}
+#slide8 #scale-bars polygon:nth-child(97) {
+  -webkit-transition-delay: 30ms;
+  -moz-transition-delay: 30ms;
+  -o-transition-delay: 30ms;
+  -ms-transition-delay: 30ms;
+  transition-delay: 30ms;
+}
+#slide8 #scale-bars polygon:nth-child(98) {
+  -webkit-transition-delay: 20ms;
+  -moz-transition-delay: 20ms;
+  -o-transition-delay: 20ms;
+  -ms-transition-delay: 20ms;
+  transition-delay: 20ms;
+}
+#slide8 #scale-bars polygon:nth-child(99) {
+  -webkit-transition-delay: 10ms;
+  -moz-transition-delay: 10ms;
+  -o-transition-delay: 10ms;
+  -ms-transition-delay: 10ms;
+  transition-delay: 10ms;
+}
+#slide8 #scale-bars polygon:nth-child(100) {
+  -webkit-transition-delay: 0ms;
+  -moz-transition-delay: 0ms;
+  -o-transition-delay: 0ms;
+  -ms-transition-delay: 0ms;
+  transition-delay: 0ms;
+}
+#slide8 #scale-fg {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateZ(10deg);
+  -moz-transform: rotateZ(10deg);
+  -o-transform: rotateZ(10deg);
+  -ms-transform: rotateZ(10deg);
+  transform: rotateZ(10deg);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.7s;
+  -moz-transition: -moz-transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.7s;
+  -o-transition: -o-transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.7s;
+  -ms-transition: -ms-transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.7s;
+  transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.7s;
+  position: relative;
+  top: -2px;
+}
+#slide8 #scale-indicator {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) 1.5s;
+  -moz-transition: opacity 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) 1.5s;
+  -o-transition: opacity 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) 1.5s;
+  -ms-transition: opacity 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) 1.5s;
+  transition: opacity 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) 1.5s;
+}
+#slide8.is-active #scale-bars polygon {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#slide8.is-active #scale-fg {
+  -webkit-transform: rotateZ(-10deg);
+  -moz-transform: rotateZ(-10deg);
+  -o-transform: rotateZ(-10deg);
+  -ms-transform: rotateZ(-10deg);
+  transform: rotateZ(-10deg);
+}
+#slide8.is-active #scale-indicator {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
 #slide15 {
   padding-top: 100px;
   position: relative;
@@ -536,13 +1289,15 @@ a {
   transition: bottom 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 2s, opacity 0.3s ease-in 2s;
 }
 #slide15.is-active .benton-black-h,
-#slide15.is-active img,
-#slide15.is-active #backtotop {
+#slide15.is-active img {
   opacity: 1;
   -ms-filter: none;
   filter: none;
 }
 #slide15.is-active #backtotop {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
   bottom: 100px;
 }
 #grid-container {
@@ -550,7 +1305,7 @@ a {
 }
 #grid-container #grid-stands-alone {
   position: absolute;
-  top: 132px;
+  top: 140px;
   right: -28px;
   font-size: 18px;
   text-transform: uppercase;
@@ -576,6 +1331,16 @@ a {
 #grid-container svg {
   position: relative;
   left: -145px;
+}
+#scale-container {
+  position: relative;
+  width: 100%;
+  height: 550px;
+}
+#scale-container svg {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 html[data-user-agent*=iPad] #main,
 html[data-user-agent*=iPhone] #main {
@@ -670,6 +1435,10 @@ html[data-user-agent*=iPad] #luxury-graph-mobile,
 html[data-user-agent*=iPhone] #luxury-graph-mobile {
   border-bottom: 1px solid #ccc;
 }
+html[data-user-agent*=iPad] #scale-container,
+html[data-user-agent*=iPhone] #scale-container {
+  height: 380px;
+}
 html[data-user-agent*=iPhone] .benton-black-h {
   font-size: 35px !important;
   line-height: 34px;
@@ -723,6 +1492,9 @@ html[data-user-agent*=iPhone] .boxes-container:nth-child(3n-3) {
 }
 html[data-user-agent*=iPhone] #backtotop {
   display: none;
+}
+html[data-user-agent*=iPhone] #scale-container {
+  height: 160px;
 }
 html[data-user-agent*=Safari]:not([data-user-agent*=Chrome]) #luxury-graph-container {
   height: 320px;

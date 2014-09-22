@@ -79,6 +79,13 @@ setupWaypoints = function() {
   }, {
     offset: -80
   });
+  $('#slide8').waypoint(function(dir) {
+    var fn;
+    fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
+    return $(this)[fn]('is-active');
+  }, {
+    offset: -80
+  });
   $('#slide5, #slide7').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
