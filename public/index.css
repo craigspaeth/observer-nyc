@@ -724,6 +724,38 @@ html[data-user-agent*=iPhone] .boxes-container:nth-child(3n-3) {
 html[data-user-agent*=iPhone] #backtotop {
   display: none;
 }
-html[data-user-agent*=Safari] body {
-  color: #f00 !important;
+html[data-user-agent*=Safari] #luxury-graph-container {
+  height: 320px;
+}
+html[data-user-agent*=Safari] #luxury-graph-container svg {
+  position: relative;
+  left: 60px;
+}
+html[data-user-agent*=Safari] #slide6-sub-copy .reveal-screen {
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: -moz-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: -o-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: -ms-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: linear-gradient(to right, rgba(255,255,255,0), #fff, #fff, #fff);
+}
+html[data-user-agent*=Safari] #grid-container #grid-stands-alone {
+  right: 48px;
+  top: 200px;
+}
+html[data-user-agent*=Safari] #grid-container svg {
+  left: -130px;
+}
+html[data-user-agent*=Firefox] #slide6-sub-copy .reveal-screen {
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: -moz-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: -o-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: -ms-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: linear-gradient(to right, rgba(255,255,255,0), #fff, #fff, #fff);
+}
+html[data-user-agent*=Firefox] #grid-container #grid-stands-alone {
+  right: 28px;
+  top: 116px;
+}
+html[data-user-agent*=Firefox] #grid-container svg {
+  left: -130px;
 }
