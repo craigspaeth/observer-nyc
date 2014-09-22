@@ -93,7 +93,7 @@ html[data-user-agent*=iPhone]
   #backtotop
     display none
 
-html[data-user-agent*=Safari]
+html[data-user-agent*=Safari]:not([data-user-agent*=Chrome])
   #luxury-graph-container
     height 320px
     svg
@@ -107,6 +107,7 @@ html[data-user-agent*=Safari]
     top 200px
   #grid-container svg
     left -130px
+    height 740px
 
 html[data-user-agent*=Firefox]
   #slide6-sub-copy
