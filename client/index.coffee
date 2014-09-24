@@ -14,19 +14,22 @@ setupSlide1Arrow = ->
   $('#slide1-down-arrow').click ->
     $('body, html').animate scrollTop: $(window).height(), 800
 
-setupWaypoints = ->
+halfwayInScreen = ->
+  ($(window).height() * 0.5) - $(this).height() / 2
 
-  # Slide reveal 93% of the wealth
-  $('#slide2').waypoint (dir) ->
-    fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
-    $(this)[fn] 'is-active'
-  , offset: '30%'
+setupWaypoints = ->
 
   # Show nav
   $('#slide3').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $('#header-nav')[fn] 'is-active'
   , offset: -> -$(this).height() - 200
+
+  # Slide reveal 93% of the wealth
+  $('#slide2').waypoint (dir) ->
+    fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
+    $(this)[fn] 'is-active'
+  , offset: halfwayInScreen
 
   # Grow graph
   $("#slide4 svg rect[idx]").each ->
@@ -50,38 +53,38 @@ setupWaypoints = ->
         setTimeout fn($("#slide4 svg rect[idx=\"#{i}\"]")), 50 * i
       else
         setTimeout fn($("#slide4 svg rect[idx=\"#{4 - i}\"]")), 50 * i
-  , offset: -80 
+  , offset: halfwayInScreen
 
   # Topple scale
   $('#slide8').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this)[fn] 'is-active'
-  , offset: -80
+  , offset: halfwayInScreen
 
   # Show ipads
   $('#slide5, #slide7').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this).find('.ipads')[fn] 'is-active'
-  , offset: '10%'
+  , offset: halfwayInScreen
 
   # Slide reveal Enter Observer.com of the wealth
   $('#slide6').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this)[fn] 'is-active'
-  , offset: '30%'
+  , offset: halfwayInScreen
 
   # Animate grid
   $('#slide9').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this)[fn] 'is-active'
-  , offset: '-10%' 
+  , offset: halfwayInScreen
 
   # Fade in last frame
   $('#slide15').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this)[fn] 'is-active'
-  , offset: '40%'
-
+  , offset: halfwayInScreen
+  
   # Hide nav
   $('#slide9 + .slide').waypoint (dir) ->
     fn = (if dir is 'down' then 'remove' else 'add') + 'Class'

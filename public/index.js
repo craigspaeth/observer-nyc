@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var IS_IPAD, IS_IPHONE, adjustForIOS, highlightNav, setSlideHeight, setupBacktoTop, setupClickHeaderNav, setupSlide1Arrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
+var IS_IPAD, IS_IPHONE, adjustForIOS, halfwayInScreen, highlightNav, setSlideHeight, setupBacktoTop, setupClickHeaderNav, setupSlide1Arrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
 
 require('jquery-waypoints/waypoints.js');
 
@@ -28,14 +28,11 @@ setupSlide1Arrow = function() {
   });
 };
 
+halfwayInScreen = function() {
+  return ($(window).height() * 0.5) - $(this).height() / 2;
+};
+
 setupWaypoints = function() {
-  $('#slide2').waypoint(function(dir) {
-    var fn;
-    fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
-    return $(this)[fn]('is-active');
-  }, {
-    offset: '30%'
-  });
   $('#slide3').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
@@ -44,6 +41,13 @@ setupWaypoints = function() {
     offset: function() {
       return -$(this).height() - 200;
     }
+  });
+  $('#slide2').waypoint(function(dir) {
+    var fn;
+    fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
+    return $(this)[fn]('is-active');
+  }, {
+    offset: halfwayInScreen
   });
   $("#slide4 svg rect[idx]").each(function() {
     return $(this).data('originalHeight', $(this).attr('height'));
@@ -77,42 +81,42 @@ setupWaypoints = function() {
     }
     return _results;
   }, {
-    offset: -80
+    offset: halfwayInScreen
   });
   $('#slide8').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $(this)[fn]('is-active');
   }, {
-    offset: -80
+    offset: halfwayInScreen
   });
   $('#slide5, #slide7').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $(this).find('.ipads')[fn]('is-active');
   }, {
-    offset: '10%'
+    offset: halfwayInScreen
   });
   $('#slide6').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $(this)[fn]('is-active');
   }, {
-    offset: '30%'
+    offset: halfwayInScreen
   });
   $('#slide9').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $(this)[fn]('is-active');
   }, {
-    offset: '-10%'
+    offset: halfwayInScreen
   });
   $('#slide15').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $(this)[fn]('is-active');
   }, {
-    offset: '40%'
+    offset: halfwayInScreen
   });
   return $('#slide9 + .slide').waypoint(function(dir) {
     var fn;
