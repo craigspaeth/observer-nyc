@@ -47,7 +47,9 @@ setupWaypoints = function() {
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $(this)[fn]('is-active');
   }, {
-    offset: halfwayInScreen
+    offset: function() {
+      return halfwayInScreen.call(this) + 150;
+    }
   });
   $("#slide4 svg rect[idx]").each(function() {
     return $(this).data('originalHeight', $(this).attr('height'));

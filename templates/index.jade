@@ -94,6 +94,9 @@ html( lang="en" data-user-agent=userAgent )
           img#luxury-grid-mobile( src='/images/grid-mobile.png' )
         small.caption Source: Quantcast, June 2014; Comscore, April & June 2014
 
+      unless userAgent.match(/iPad|iPhone/)
+        .slide( style='margin-bottom: -600px' )
+
       section#slide11.slide
         h1.benton-black-h We<br> Tell<br> Stories
       
