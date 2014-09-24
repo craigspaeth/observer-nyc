@@ -1,3 +1,7 @@
+mixin transition-spacer
+  unless userAgent.match(/iPad|iPhone/)
+    .slide( style='margin: -200px 0; padding: 0' )
+
 doctype html
 html( lang="en" data-user-agent=userAgent )
   head
@@ -26,6 +30,8 @@ html( lang="en" data-user-agent=userAgent )
 
       section#slide3.slide
         h1.benton-black-h Are you reaching<br> that 20%?
+
+      +transition-spacer
 
       section#slide4.slide
         p.long-body In today's digital age, the traditional print vehicles for luxury advertising have been left behind, never transitioning organically online. Having retained their “print first” editorial and design ethos, their online presences still feel like afterthoughts to their glossy counterparts, failing to attract a large portion of the 20%.
@@ -94,8 +100,7 @@ html( lang="en" data-user-agent=userAgent )
           img#luxury-grid-mobile( src='/images/grid-mobile.png' )
         small.caption Source: Quantcast, June 2014; Comscore, April & June 2014
 
-      unless userAgent.match(/iPad|iPhone/)
-        .slide( style='margin-bottom: -600px' )
+      +transition-spacer
 
       section#slide11.slide
         h1.benton-black-h We<br> Tell<br> Stories

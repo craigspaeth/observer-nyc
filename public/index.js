@@ -48,7 +48,7 @@ setupWaypoints = function() {
     return $(this)[fn]('is-active');
   }, {
     offset: function() {
-      return halfwayInScreen.call(this) + 150;
+      return ($(window).height() * 0.65) - $(this).height() / 2;
     }
   });
   $("#slide4 svg rect[idx]").each(function() {

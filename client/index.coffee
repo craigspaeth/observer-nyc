@@ -29,7 +29,7 @@ setupWaypoints = ->
   $('#slide2').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this)[fn] 'is-active'
-  , offset: -> halfwayInScreen.call(this) + 150
+  , offset: -> ($(window).height() * 0.65) - $(this).height() / 2
 
   # Grow graph
   $("#slide4 svg rect[idx]").each ->
