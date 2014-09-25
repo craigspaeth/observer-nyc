@@ -23,9 +23,19 @@ html( lang="en" data-user-agent=userAgent )
       section#slide1.slide
         a( href='http://observer.com' target='_blank' )
           img( src='images/logotype.svg' alt='Observer.com' )
-        #slide1-down-arrow
+        .slide-down-arrow
+      section#slide1-5.slide
+        p.long-body The Observer is proud to call NYC home. Like any great NY-based media company, our audience extends throughout the country, with nearly 75% of our readers coming from outside of the NY area.
+        .map
+          img( src='images/map-bg.svg' )
+          .map-dots
+            img( src='images/map-1.svg' )
+            img( src='images/map-2.svg' )
+            img( src='images/map-3.svg' )
+            img( src='images/map-4.svg' )
+        .caption Source: Comscore March 2014
       section#slide2.slide
-        h1 93% of the wealth in America is held by<br> 20% of the population.
+        h1 20% of the US population has 93% of the purchasing power.
         .reveal-screen
 
       section#slide3( style='padding-top: 150px' )
@@ -34,7 +44,7 @@ html( lang="en" data-user-agent=userAgent )
       +transition-spacer
 
       section#slide4.slide
-        p.long-body In today's digital age, the traditional print vehicles for luxury advertising have been left behind, never transitioning organically online. Having retained their “print first” editorial and design ethos, their online presences still feel like afterthoughts to their glossy counterparts, failing to attract a large portion of the 20%.
+        p.long-body Being a Luxury advertiser used to be relatively straightforward. Work with your favorite luxury print titles, and call it a day. Today the audience has become much more fragmented, and many of the traditional print brands, which have been successful for so long, have failed to keep up and develop meaningful web audiences.
         .img-spacer
         unless userAgent.match(/iPad|iPhone/)
           #luxury-graph-container
@@ -45,7 +55,7 @@ html( lang="en" data-user-agent=userAgent )
         small.caption Sources: Quantcast, June 2014 - Observer, GQ, Esquire, Vanity Fair; Comscore, June 2014 - Vogue (Vogue is not tracked by Quantcast)
       
       section#slide5.slide
-        p.long-body The digital innovators have ignored the luxury space. On the hunt for more pageviews and more visitors, digital native publishers have sacrificed quality and taste to reach massive audiences, relying on empty calories like: cat videos, political Twitter scandals, and click-bait celebrity headlines.
+        p.long-body The digital innovators have ignored the luxury space. On the hunt for more pageviews and more visitors, digital native publishers have sacrificed quality and taste to reach massive audiences, often relying on empty calories like cat videos, political Twitter scandals, and click-bait celebrity headlines.
         .img-spacer
         .ipads
           p Shock Stories
@@ -63,7 +73,7 @@ html( lang="en" data-user-agent=userAgent )
           .reveal-screen
       
       section#slide7.slide
-        p.long-body Built to reach the 20% on the topics they are passionate about, Observer.com features the latest in national news, fine arts, fashion, politics & high value real estate.
+        p.long-body Observer.com reaches an elite audience by focusing on the topics that they care about, such as fine arts, fashion, politics & luxury real estate.
         .img-spacer
         .ipads
           p Style
@@ -74,7 +84,7 @@ html( lang="en" data-user-agent=userAgent )
             img( src='/images/slide7-content.jpg' )
 
       section#slide8.slide
-        p.long-body Studies show that the top earners in the United States are becoming increasingly wealthy, concentrating the vast majority of wealth in the hands of a few. Most popular internet sites target the majority of the country and neglect the nation’s most affluent individuals—Observer.com reaches them.
+        p.long-body Studies show that the top earners in the United States are becoming increasingly wealthy. Observer.com is focused on reaching them.
         .img-spacer
         #scale-container
           #scale-indicator
@@ -89,7 +99,7 @@ html( lang="en" data-user-agent=userAgent )
         small.caption Source: www2.ucsc.edu/whorulesamerica/power/wealth.html
         
       section#slide9.slide
-        p.long-body With more expendable income on average than any competitive site, Observer.com’s audience nets $223 trillion in combined annual income.
+        p.long-body Observer stands alone in reaching a large, and highly affluent online audience.
         .img-spacer
         unless userAgent.match(/iPad|iPhone/)
           #grid-container
@@ -106,26 +116,24 @@ html( lang="en" data-user-agent=userAgent )
         h1.benton-black-h We<br> Tell<br> Stories
       
       section#slide12.slide
-        p.long-body Recognized for outstanding editorial programs and original branded content, the Observer’s digital, print, and social media platforms captivate audiences through dynamic stories told by strong voices.
+        p.long-body The Observer brings together business, culture, and media leaders for premier experiences and intimate, unforgettable performances. With partners like Universal Music and talent like Carla Bruni, John Legend, and other world renowned artists, the Observer creates stories.
         .img-spacer
-        .boxes
-          for n, i in new Array(6)
-            .boxes-container
-              img( src='/images/box' + (i + 1) + '.png' )
+        ul.end-slide-show
+          for n, i in new Array(4)
+            img( src='slides/' + (i + 1) + '.jpg' )
+
       
       section#slide13.slide
         h1.benton-black-h We<br> Create<br> Stories
       
       section#slide14.slide
-        p.long-body The Observer brings together business, culture, and media leaders for premier experiences and intimate, unforgettable performances. With partners like Universal Music and talent like Carla Bruni, John Legend, and other world renowned artists, the Observer creates stories. With a cast of elite characters, in extraordinary settings, brands can expect a fairytale ending.
         .img-spacer
-        .boxes
-          for n, i in new Array(6)
-            .boxes-container
-              img( src='/images/box2-' + (i + 1) + '.jpg' )
+        #video
+          include vimeoembed.html
       
       section#slide15.slide
-        h1.benton-black-h Let us tell <br><em>your</em> story.
+        header
+          img( src='images/final-slide.svg' )
         #backtotop
         a( href='http://observer.com' target='_blank' )
           img( src='images/logotype.svg' alt='Observer.com' )
@@ -133,5 +141,6 @@ html( lang="en" data-user-agent=userAgent )
     #scripts
       script( src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" )
       script( src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js" )
+      script( src='//f.vimeocdn.com/js/froogaloop2.min.js' )
       script( src='/index.js' )
       include ga.html

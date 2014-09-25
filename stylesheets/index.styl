@@ -28,7 +28,7 @@ a
   font-size body-font-size
 
 .long-body-large
-  font-size 38px
+  font-size 36px
   line-height 1.2em
 
 .img-spacer
@@ -92,7 +92,7 @@ a
   &.is-active
     img
       opacity 1
-    #slide1-down-arrow
+    .slide-down-arrow
       bottom 80px
       opacity 1
   img
@@ -105,7 +105,7 @@ a
     opacity 0
     transition opacity 1s ease-in-cubic
 
-#slide1-down-arrow, #backtotop
+.slide-down-arrow, #backtotop
   background url('images/down-arrow.svg') no-repeat center center
   background-size 30px
   height 30px
@@ -118,8 +118,29 @@ a
   transition bottom 0.5s ease-out-quart 1s, opacity 0.2s ease-in 1s
   cursor pointer
 
+#slide1-5
+  &.is-active
+    .map-dots img
+      opacity 1
+
+.map
+  position relative
+  margin-top 50px
+  > img
+    opacity 0.5
+
+.map-dots img
+  position absolute
+  top 0
+  transition 0.2s ease-in-out
+  opacity 0
+
+for i in 1 2 3 4
+  .map-dots img:nth-child({i})
+    transition-delay (0.2 * i)s
+
 #slide2
-  margin-bottom -180px
+  margin-bottom 30px
   position relative
   &.is-active
     .reveal-screen
@@ -131,6 +152,11 @@ a
     font-size 34px
     letter-spacing 2px
     line-height 1.3em
+    position absolute
+    top 50%
+    margin-top -40px
+  .reveal-screen
+    height calc(100% - 40px)
 
 .reveal-screen
   color transparent
@@ -182,22 +208,6 @@ a
       transform rotateZ(-10deg)
     #scale-indicator
       opacity 1
-
-#slide15
-  padding-top 100px
-  position relative
-  h1
-    font-family PTSerif
-    text-transform none
-    line-height 10px
-    font-weight normal
-  em
-    font-style italic
-  img
-    position absolute
-    bottom 100px
-    right main-margin
-    height 40px
 
 .boxes-container
   display inline-block
@@ -289,11 +299,21 @@ a
     transition stroke-dashoffset 0.1s ease-in 0.8s
 
 #slide15
-  .benton-black-h, img
-    opacity 0
-  .benton-black-h
+  padding-top 100px
+  position relative
+  header
+    text-align left
     transition opacity 1s ease-in-cubic
-  img
+    opacity 0
+    img
+      width 600px
+      display inline-block
+  > a img
+    position absolute
+    bottom 100px
+    right main-margin
+    height 40px
+    opacity 0
     transition opacity 0.3s ease-in 1.3s
   #backtotop
     opacity 0
@@ -303,7 +323,7 @@ a
     transition opacity 0.3s ease-in 2s
     transition bottom 0.3s ease-out-quart 2s, opacity 0.3s ease-in 2s
   &.is-active
-    .benton-black-h, img
+    header, img
       opacity 1
     #backtotop
       opacity 0.5
@@ -342,5 +362,20 @@ a
     position absolute
     top 0
     left 0
+
+.end-slide-show
+  position relative
+  height 603px
+  img
+    position absolute
+    top 0
+    left 0
+    width 100%
+    opacity 0
+    &.is-active
+      opacity 1
+
+#video
+  margin-left -50px
 
 @import 'devices'

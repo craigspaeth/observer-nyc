@@ -11,8 +11,16 @@ setupClickHeaderNav = ->
     $('body, html').animate scrollTop: top
 
 setupSlide1Arrow = ->
-  $('#slide1-down-arrow').click ->
-    $('body, html').animate scrollTop: $(window).height(), 800
+  $('.slide-down-arrow').click ->
+    $('body, html').animate scrollTop: $(window).height() + 150, 800
+
+setupEndSlideshow = ->
+  setInterval ->
+    $next = $('.end-slide-show img.is-active').next()
+    $next = $('.end-slide-show img').first() unless $next.length
+    $('.end-slide-show img').removeClass('is-active')
+    $next.addClass('is-active')
+  , 1000
 
 halfwayInScreen = ->
   ($(window).height() * 0.5) - $(this).height() / 2
@@ -25,11 +33,17 @@ setupWaypoints = ->
     $('#header-nav')[fn] 'is-active'
   , offset: -> -$(this).height() - 200
 
+  # Stagger fade in map dots
+  $('#slide1-5').waypoint (dir) ->
+    fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
+    $(this)[fn] 'is-active'
+  , offset: -> halfwayInScreen.call(this) + 200
+
   # Slide reveal 93% of the wealth
   $('#slide2').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this)[fn] 'is-active'
-  , offset: -> ($(window).height() * 0.65) - $(this).height() / 2
+  , offset: halfwayInScreen
 
   # Grow graph
   $("#slide4 svg rect[idx]").each ->
@@ -65,13 +79,13 @@ setupWaypoints = ->
   $('#slide5, #slide7').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this).find('.ipads')[fn] 'is-active'
-  , offset: halfwayInScreen
+  , offset: -> halfwayInScreen.call(this) + 100
 
   # Slide reveal Enter Observer.com of the wealth
   $('#slide6').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this)[fn] 'is-active'
-  , offset: halfwayInScreen
+  , offset: -> halfwayInScreen.call(this) + 200
 
   # Animate grid
   $('#slide9').waypoint (dir) ->
@@ -79,12 +93,22 @@ setupWaypoints = ->
     $(this)[fn] 'is-active'
   , offset: halfwayInScreen
 
+  # Start & pause video
+  player = $f $('#video iframe')[0]
+  player.addEvent 'ready', ->
+    $('#slide14').waypoint (dir) ->
+      player.api('play')
+    , offset: -> halfwayInScreen.call(this) - 200
+    $('#slide13, #slide15').waypoint (dir) ->
+      player.api('pause')
+    , offset: halfwayInScreen
+
   # Fade in last frame
   $('#slide15').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this)[fn] 'is-active'
   , offset: halfwayInScreen
-  
+
   # Hide nav
   $('#slide9 + .slide').waypoint (dir) ->
     fn = (if dir is 'down' then 'remove' else 'add') + 'Class'
@@ -145,4 +169,5 @@ $ ->
   setupClickHeaderNav()
   setupSlide1Arrow()
   setupBacktoTop()
+  setupEndSlideshow()
   $('#slide1').addClass 'is-active'

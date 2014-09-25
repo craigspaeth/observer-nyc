@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var IS_IPAD, IS_IPHONE, adjustForIOS, halfwayInScreen, highlightNav, setSlideHeight, setupBacktoTop, setupClickHeaderNav, setupSlide1Arrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
+var IS_IPAD, IS_IPHONE, adjustForIOS, halfwayInScreen, highlightNav, setSlideHeight, setupBacktoTop, setupClickHeaderNav, setupEndSlideshow, setupSlide1Arrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
 
 require('jquery-waypoints/waypoints.js');
 
@@ -21,11 +21,23 @@ setupClickHeaderNav = function() {
 };
 
 setupSlide1Arrow = function() {
-  return $('#slide1-down-arrow').click(function() {
+  return $('.slide-down-arrow').click(function() {
     return $('body, html').animate({
-      scrollTop: $(window).height()
+      scrollTop: $(window).height() + 150
     }, 800);
   });
+};
+
+setupEndSlideshow = function() {
+  return setInterval(function() {
+    var $next;
+    $next = $('.end-slide-show img.is-active').next();
+    if (!$next.length) {
+      $next = $('.end-slide-show img').first();
+    }
+    $('.end-slide-show img').removeClass('is-active');
+    return $next.addClass('is-active');
+  }, 1000);
 };
 
 halfwayInScreen = function() {
@@ -33,6 +45,7 @@ halfwayInScreen = function() {
 };
 
 setupWaypoints = function() {
+  var player;
   $('#slide3').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
@@ -42,14 +55,21 @@ setupWaypoints = function() {
       return -$(this).height() - 200;
     }
   });
-  $('#slide2').waypoint(function(dir) {
+  $('#slide1-5').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $(this)[fn]('is-active');
   }, {
     offset: function() {
-      return ($(window).height() * 0.65) - $(this).height() / 2;
+      return halfwayInScreen.call(this) + 200;
     }
+  });
+  $('#slide2').waypoint(function(dir) {
+    var fn;
+    fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
+    return $(this)[fn]('is-active');
+  }, {
+    offset: halfwayInScreen
   });
   $("#slide4 svg rect[idx]").each(function() {
     return $(this).data('originalHeight', $(this).attr('height'));
@@ -97,14 +117,18 @@ setupWaypoints = function() {
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $(this).find('.ipads')[fn]('is-active');
   }, {
-    offset: halfwayInScreen
+    offset: function() {
+      return halfwayInScreen.call(this) + 100;
+    }
   });
   $('#slide6').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
     return $(this)[fn]('is-active');
   }, {
-    offset: halfwayInScreen
+    offset: function() {
+      return halfwayInScreen.call(this) + 200;
+    }
   });
   $('#slide9').waypoint(function(dir) {
     var fn;
@@ -112,6 +136,21 @@ setupWaypoints = function() {
     return $(this)[fn]('is-active');
   }, {
     offset: halfwayInScreen
+  });
+  player = $f($('#video iframe')[0]);
+  player.addEvent('ready', function() {
+    $('#slide14').waypoint(function(dir) {
+      return player.api('play');
+    }, {
+      offset: function() {
+        return halfwayInScreen.call(this) - 200;
+      }
+    });
+    return $('#slide13, #slide15').waypoint(function(dir) {
+      return player.api('pause');
+    }, {
+      offset: halfwayInScreen
+    });
   });
   $('#slide15').waypoint(function(dir) {
     var fn;
@@ -215,6 +254,7 @@ $(function() {
   setupClickHeaderNav();
   setupSlide1Arrow();
   setupBacktoTop();
+  setupEndSlideshow();
   return $('#slide1').addClass('is-active');
 });
 
