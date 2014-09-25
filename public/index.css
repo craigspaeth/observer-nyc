@@ -196,7 +196,7 @@ a {
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #555;
+  color: #444;
   -webkit-transition: color 0.3s ease-out;
   -moz-transition: color 0.3s ease-out;
   -o-transition: color 0.3s ease-out;
@@ -206,6 +206,7 @@ a {
   text-align: center;
   vertical-align: middle;
   font-size: 14px;
+  font-weight: bold;
 }
 #header-nav a:last-child {
   margin-right: 0;
