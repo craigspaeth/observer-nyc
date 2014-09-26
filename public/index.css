@@ -1218,6 +1218,9 @@ a {
   position: relative;
   font-size: 17px;
 }
+.ipads > p a {
+  color: #aaa;
+}
 .ipads > p:nth-child(2) {
   -webkit-transition: opacity 0.5s ease-in;
   -moz-transition: opacity 0.5s ease-in;
