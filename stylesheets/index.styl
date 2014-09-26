@@ -94,20 +94,33 @@ em
 
 #slide1
   &.is-active
-    img
+    img, #tagline
       opacity 1
     .slide-down-arrow
       bottom 80px
       opacity 1
-  img
+  img, #tagline
     position absolute
     width 400px
     top 50%
-    margin-top -50px
+    margin-top -75px
     left 50%
     margin-left -(@width / 2)
     opacity 0
     transition opacity 1s ease-in-cubic
+  #tagline
+    margin-top 0px
+    z-index 10
+    color white
+    text-align center
+    font-size 14px
+    color #bbb
+    text-transform uppercase
+    letter-spacing 2px
+    font-weight bold
+    width 450px
+    margin-left -221px
+    transition opacity 0.7s ease-in-cubic 0.7s
 
 .slide-down-arrow, #backtotop
   background url('images/down-arrow.svg') no-repeat center center

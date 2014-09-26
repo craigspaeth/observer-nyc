@@ -221,7 +221,8 @@ em {
 #header-nav-inner {
   min-width: 855px;
 }
-#slide1.is-active img {
+#slide1.is-active img,
+#slide1.is-active #tagline {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -232,11 +233,12 @@ em {
   -ms-filter: none;
   filter: none;
 }
-#slide1 img {
+#slide1 img,
+#slide1 #tagline {
   position: absolute;
   width: 400px;
   top: 50%;
-  margin-top: -50px;
+  margin-top: -75px;
   left: 50%;
   margin-left: -200px;
   opacity: 0;
@@ -247,6 +249,24 @@ em {
   -o-transition: opacity 1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   -ms-transition: opacity 1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition: opacity 1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+#slide1 #tagline {
+  margin-top: 0px;
+  z-index: 10;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  width: 450px;
+  margin-left: -221px;
+  -webkit-transition: opacity 0.7s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.7s;
+  -moz-transition: opacity 0.7s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.7s;
+  -o-transition: opacity 0.7s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.7s;
+  -ms-transition: opacity 0.7s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.7s;
+  transition: opacity 0.7s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.7s;
 }
 .slide-down-arrow,
 #backtotop {
