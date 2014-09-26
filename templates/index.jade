@@ -49,7 +49,9 @@ html( lang="en" data-user-agent=userAgent )
         unless userAgent.match(/iPad|iPhone/)
           #luxury-graph-container
             img( src='/images/slide4-content.jpg' )
-            include ../public/images/luxury-graph.svg
+            #luxury-graph-svg-container
+              include ../public/images/luxury-graph-bg.svg
+              include ../public/images/luxury-graph-bars.svg
         else
           img#luxury-graph-mobile( src='/images/graph-mobile.jpg' )
         small.caption Sources: Quantcast, June 2014 - Observer, GQ, Esquire, Vanity Fair; Comscore, June 2014 - Vogue (Vogue is not tracked by Quantcast)

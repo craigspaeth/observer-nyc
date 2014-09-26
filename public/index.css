@@ -1187,9 +1187,18 @@ a {
   width: 65%;
   border-bottom: 1px solid #ccc;
 }
-#luxury-graph-container svg {
+#luxury-graph-svg-container {
+  position: relative;
   padding-left: 60px;
   width: 34%;
+  display: inline-block;
+  height: 300px;
+}
+#luxury-graph-svg-container svg {
+  position: absolute;
+  bottom: 0;
+  right: -145px;
+  width: 520px;
 }
 .ipads {
   position: relative;
