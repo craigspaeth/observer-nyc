@@ -69,12 +69,6 @@ setupWaypoints = ->
         setTimeout fn($("#slide4 svg rect[idx=\"#{4 - i}\"]")), 50 * i
   , offset: halfwayInScreen
 
-  # Topple scale
-  $('#slide8').waypoint (dir) ->
-    fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
-    $(this)[fn] 'is-active'
-  , offset: halfwayInScreen
-
   # Show ipads
   $('#slide5, #slide7').waypoint (dir) ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
@@ -86,6 +80,12 @@ setupWaypoints = ->
     fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
     $(this)[fn] 'is-active'
   , offset: -> halfwayInScreen.call(this) + 200
+
+  # # Topple scale
+  # $('#slide8').waypoint (dir) ->
+  #   fn = (if dir is 'down' then 'add' else 'remove') + 'Class'
+  #   $(this)[fn] 'is-active'
+  # , offset: halfwayInScreen
 
   # Animate grid
   $('#slide9').waypoint (dir) ->
@@ -122,7 +122,7 @@ setSlideHeight = ->
   $('.slide').css 'min-height': $(window).height()
 
 transitionBGStart = ->
-  return if $(window).scrollTop() > $('#slide8').offset().top
+  return if $(window).scrollTop() > $('#slide9').offset().top
   start = $('#slide3 h1').offset().top + 100
   end = $('#slide4').offset().top - ($(window).height() / 2)
   perc = (end - $(window).scrollTop()) / (end - start)
@@ -132,7 +132,7 @@ transitionBGStart = ->
     color: "rgb(#{val + 40},#{val + 40},#{val + 40})"
 
 transitionBGEnd = ->
-  return if $(window).scrollTop() < $('#slide8').offset().top
+  return if $(window).scrollTop() < $('#slide9').offset().top
   start = $('#slide9').offset().top + ($(window).height() / 2)
   end = ($('#slide11').offset().top - $(window).height()) + 200
   perc = (end - $(window).scrollTop()) / (end - start)

@@ -105,13 +105,6 @@ setupWaypoints = function() {
   }, {
     offset: halfwayInScreen
   });
-  $('#slide8').waypoint(function(dir) {
-    var fn;
-    fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
-    return $(this)[fn]('is-active');
-  }, {
-    offset: halfwayInScreen
-  });
   $('#slide5, #slide7').waypoint(function(dir) {
     var fn;
     fn = (dir === 'down' ? 'add' : 'remove') + 'Class';
@@ -182,7 +175,7 @@ setSlideHeight = function() {
 
 transitionBGStart = function() {
   var end, perc, start, val;
-  if ($(window).scrollTop() > $('#slide8').offset().top) {
+  if ($(window).scrollTop() > $('#slide9').offset().top) {
     return;
   }
   start = $('#slide3 h1').offset().top + 100;
@@ -197,7 +190,7 @@ transitionBGStart = function() {
 
 transitionBGEnd = function() {
   var end, perc, start, val;
-  if ($(window).scrollTop() < $('#slide8').offset().top) {
+  if ($(window).scrollTop() < $('#slide9').offset().top) {
     return;
   }
   start = $('#slide9').offset().top + ($(window).height() / 2);
