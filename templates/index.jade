@@ -123,9 +123,10 @@ html( lang="en" data-user-agent=userAgent )
       section#slide12.slide
         p.long-body The Observer brings together business, culture, and media leaders for premier experiences and intimate, unforgettable performances. With partners like Universal Music and talent like Carla Bruni, John Legend, and other world renowned artists, the Observer creates stories.
         .img-spacer
-        ul.end-slide-show
-          for n, i in new Array(4)
-            img( src='slides/' + (i + 1) + '.jpg' )
+        .boxes
+          for n, i in new Array(6)
+            .boxes-container
+              img( src='/images/box2-' + (i + 1) + '.jpg' )
 
       
       section#slide13.slide
