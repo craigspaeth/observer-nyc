@@ -1226,7 +1226,6 @@ em {
 .ipads {
   position: relative;
   height: 370px;
-  border-bottom: 1px solid #ccc;
 }
 .ipads > p {
   width: 23.33%;
