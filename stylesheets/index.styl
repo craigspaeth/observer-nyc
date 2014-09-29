@@ -121,6 +121,10 @@ em
     width 450px
     margin-left -221px
     transition opacity 0.7s ease-in-cubic 0.7s
+  .slide-down-arrow
+    position absolute
+    opacity 0
+    transition bottom 0.5s ease-out-quart 1s, opacity 0.2s ease-in 1s
 
 .slide-down-arrow, #backtotop
   background url('images/down-arrow.svg') no-repeat center center
@@ -135,6 +139,18 @@ em
   transition bottom 0.5s ease-out-quart 1s, opacity 0.2s ease-in 1s
   cursor pointer
 
+.slide-down-arrow
+  position absolute
+  bottom 0
+  opacity 0.2
+  transition opacity 0.3s ease-in
+  z-index 3
+  &:hover
+    opacity 1
+
+#slide3
+  position relative
+
 #slide1-5
   &.is-active
     .map-dots img
@@ -142,7 +158,8 @@ em
 
 .map
   position relative
-  margin-top 50px
+  margin-top -100px
+  height 760px
   > img
     opacity 0.5
 

@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var IS_IPAD, IS_IPHONE, adjustForIOS, halfwayInScreen, highlightNav, setSlideHeight, setupBacktoTop, setupClickHeaderNav, setupEndSlideshow, setupSlide1Arrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
+var IS_IPAD, IS_IPHONE, adjustForIOS, halfwayInScreen, highlightNav, setSlideHeight, setupBacktoTop, setupClickHeaderNav, setupEndSlideshow, setupSlideArrow, setupWaypoints, transitionBGEnd, transitionBGStart, _;
 
 require('jquery-waypoints/waypoints.js');
 
@@ -20,10 +20,18 @@ setupClickHeaderNav = function() {
   });
 };
 
-setupSlide1Arrow = function() {
-  return $('.slide-down-arrow').click(function() {
+setupSlideArrow = function() {
+  $('#slide1 .slide-down-arrow').click(function() {
     return $('body, html').animate({
       scrollTop: $(window).height() + 150
+    }, 800);
+  });
+  return $('.slide-down-arrow:not(#slide1 .slide-down-arrow)').click(function() {
+    var top;
+    console.log($(this).closest('section').nextAll('section').first());
+    top = $(this).closest('section').nextAll('section').first().offset().top + 100;
+    return $('body, html').animate({
+      scrollTop: top
     }, 800);
   });
 };
@@ -245,7 +253,7 @@ $(function() {
     setupWaypoints();
   }
   setupClickHeaderNav();
-  setupSlide1Arrow();
+  setupSlideArrow();
   setupBacktoTop();
   setupEndSlideshow();
   return $('#slide1').addClass('is-active');

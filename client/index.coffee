@@ -10,9 +10,13 @@ setupClickHeaderNav = ->
     top = $("##{$(this).attr('href')}").offset().top + 90
     $('body, html').animate scrollTop: top
 
-setupSlide1Arrow = ->
-  $('.slide-down-arrow').click ->
+setupSlideArrow = ->
+  $('#slide1 .slide-down-arrow').click ->
     $('body, html').animate scrollTop: $(window).height() + 150, 800
+  $('.slide-down-arrow:not(#slide1 .slide-down-arrow)').click ->
+    console.log $(this).closest('section').nextAll('section').first()
+    top = $(this).closest('section').nextAll('section').first().offset().top + 100
+    $('body, html').animate scrollTop: top, 800
 
 setupEndSlideshow = ->
   setInterval ->
@@ -167,7 +171,7 @@ $ ->
     setSlideHeight()
     setupWaypoints()
   setupClickHeaderNav()
-  setupSlide1Arrow()
+  setupSlideArrow()
   setupBacktoTop()
   setupEndSlideshow()
   $('#slide1').addClass 'is-active'
