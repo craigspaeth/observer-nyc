@@ -1369,6 +1369,7 @@ em {
 #slide15 header img {
   width: 600px;
   display: inline-block;
+  margin-left: -22px;
 }
 #slide15 > a img {
   position: absolute;
