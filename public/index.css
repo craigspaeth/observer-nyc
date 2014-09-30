@@ -1234,6 +1234,10 @@ em {
 .boxes-container:nth-child(6n) {
   text-align: right;
 }
+#luxury-graph-container {
+  padding-top: 30px;
+  overflow: hidden;
+}
 #luxury-graph-container img,
 #luxury-graph-container svg {
   display: inline-block;
