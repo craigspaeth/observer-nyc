@@ -429,11 +429,11 @@ em {
   transition: opacity 3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #slide6-sub-copy .reveal-screen {
-  background: -webkit-linear-gradient(left, transparent, #fff, #fff, #fff);
-  background: -moz-linear-gradient(left, transparent, #fff, #fff, #fff);
-  background: -o-linear-gradient(left, transparent, #fff, #fff, #fff);
-  background: -ms-linear-gradient(left, transparent, #fff, #fff, #fff);
-  background: linear-gradient(to right, transparent, #fff, #fff, #fff);
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: -moz-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: -o-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: -ms-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
+  background: linear-gradient(to right, rgba(255,255,255,0), #fff, #fff, #fff);
   -webkit-transition: width 2s ease-in-out;
   -moz-transition: width 2s ease-in-out;
   -o-transition: width 2s ease-in-out;
@@ -1690,35 +1690,6 @@ html[data-user-agent*=iPhone] #backtotop {
 }
 html[data-user-agent*=iPhone] #scale-container {
   height: 160px;
-}
-html[data-user-agent*=Safari]:not([data-user-agent*=Chrome]) #luxury-graph-container {
-  height: 320px;
-}
-html[data-user-agent*=Safari]:not([data-user-agent*=Chrome]) #luxury-graph-container svg {
-  position: relative;
-  left: 60px;
-}
-html[data-user-agent*=Safari]:not([data-user-agent*=Chrome]) #slide6-sub-copy .reveal-screen {
-  background: -webkit-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
-  background: -moz-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
-  background: -o-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
-  background: -ms-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
-  background: linear-gradient(to right, rgba(255,255,255,0), #fff, #fff, #fff);
-}
-html[data-user-agent*=Safari]:not([data-user-agent*=Chrome]) #grid-container #grid-stands-alone {
-  right: 48px;
-  top: 200px;
-}
-html[data-user-agent*=Safari]:not([data-user-agent*=Chrome]) #grid-container svg {
-  left: -130px;
-  height: 740px;
-}
-html[data-user-agent*=Firefox] #slide6-sub-copy .reveal-screen {
-  background: -webkit-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
-  background: -moz-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
-  background: -o-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
-  background: -ms-linear-gradient(left, rgba(255,255,255,0), #fff, #fff, #fff);
-  background: linear-gradient(to right, rgba(255,255,255,0), #fff, #fff, #fff);
 }
 html[data-user-agent*=Firefox] #grid-container #grid-stands-alone {
   right: 28px;
